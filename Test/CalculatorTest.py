@@ -13,337 +13,227 @@ class ParametrosPension:
 
 
 class PensionTest(unittest.TestCase):
-
-    @staticmethod
-    def testAhorroPensionalAHoyMenorACero():
-        """
-        Prueba para validar el comportamiento cuando el ahorro pensional a hoy es menor a cero.
-        """
+    # casos normales (6)
+    def test_caso_normal1(self):
         parametros = ParametrosPension()
-        parametros.edad = 99
-        parametros.salario_actual = 2000000
-        parametros.semanas_laboradas = 1300
-        parametros.ahorro_pensional_a_hoy = -2
-        parametros.rentabilidad_promedio = 6
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
-        sexo = "f"
+        # entradas
+        parametros.edad = 25
+        sexo = "m"
+        estado_civil = "s"
+        parametros.salario_actual = 1500000
+        parametros.semanas_laboradas = 200
+        parametros.ahorro_pensional_a_hoy = 1000000
+        parametros.rentabilidad_promedio = 4
+        parametros.tasa_administracion = 1
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 1000000
+        valor_pension_esperada = 300_000
+
+    def test_caso_normal2(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 45
+        sexo = "m"
         estado_civil = "c"
-        hereda_pension = "n"
+        parametros.salario_actual = 3000000
+        parametros.semanas_laboradas = 1000
+        parametros.ahorro_pensional_a_hoy = 50000000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 1
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 50000000
+        valor_pension_esperada = 1500000
 
-    @staticmethod
-    def testSemanasLaboradasMenoresACero():
-        """
-        Prueba para validar el comportamiento cuando las semanas laboradas son menores a cero.
-        """
+    def test_caso_normal3(self):
         parametros = ParametrosPension()
-        parametros.edad = 78
-        parametros.salario_actual = 0
-        parametros.semanas_laboradas = -20
-        parametros.ahorro_pensional_a_hoy = 0
-        parametros.rentabilidad_promedio = 0
-        parametros.tasa_administracion = 0
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-
-    @staticmethod
-    def testEdadMenorIgualACero():
-        """
-        Prueba para validar el comportamiento cuando la edad es menor o igual a cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = -10
-        parametros.salario_actual = 0
-        parametros.semanas_laboradas = 0
-        parametros.ahorro_pensional_a_hoy = 0
-        parametros.rentabilidad_promedio = 0
-        parametros.tasa_administracion = 0
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-
-    @staticmethod
-    def testEdadCero():
-        """
-        Prueba para validar el comportamiento cuando la edad es exactamente cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 0
-        parametros.salario_actual = 0
-        parametros.semanas_laboradas = 0
-        parametros.ahorro_pensional_a_hoy = 0
-        parametros.rentabilidad_promedio = 0
-        parametros.tasa_administracion = 0
-        parametros.edad_pension_total = 65
+        # entradas
+        parametros.edad = 28
         sexo = "f"
         estado_civil = "s"
-        hereda_pension = "n"
+        parametros.salario_actual = 1800000
+        parametros.semanas_laboradas = 300
+        parametros.ahorro_pensional_a_hoy = 2000000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 1
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 2000000
+        valor_pension_esperada = 600000
 
-    @staticmethod
-    def testEdadMayorACientoVeinte():
+    def test_caso_normal4(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 50
+        sexo = "f"
+        estado_civil = "c"
+        parametros.salario_actual = 3500000
+        parametros.semanas_laboradas = 1200
+        parametros.ahorro_pensional_a_hoy = 75000000
+        parametros.rentabilidad_promedio = 4
+        parametros.tasa_administracion = 1
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 75000000
+        valor_pension_esperada = 2100000
+
+    def test_caso_normal5(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 60
+        sexo = "m"
+        estado_civil = "c"
+        parametros.salario_actual = 4000000
+        parametros.semanas_laboradas = 1600
+        parametros.ahorro_pensional_a_hoy = 100000000
+        parametros.rentabilidad_promedio = 4
+        parametros.tasa_administracion = 1
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 100000000
+        valor_pension_esperada = 2800000
+
+    def test_caso_normal6(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 58
+        sexo = "f"
+        estado_civil = "c"
+        parametros.salario_actual = 3800000
+        parametros.semanas_laboradas = 1500
+        parametros.ahorro_pensional_a_hoy = 95000000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 1
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 95000000
+        valor_pension_esperada = 2600000
+
+    # casos Extraordinarios
+    def extraordinario1(self):
+        pass
+
+
+    # casos de ErROR
+    def test_error_edad_negativa(self):
         """
-        Prueba para validar el comportamiento cuando la edad es mayor a 120 años.
+        Prueba para un caso donde la edad ingresada es negativa.
         """
         parametros = ParametrosPension()
-        parametros.edad = 122
+        # entradas erróneas
+        parametros.edad = -5  # Error
+        sexo = "m"
+        estado_civil = "s"
         parametros.salario_actual = 2000000
-        parametros.semanas_laboradas = 1300
-        parametros.ahorro_pensional_a_hoy = 30000000
-        parametros.rentabilidad_promedio = 1
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
-        sexo = "M"
-        estado_civil = "c"
-        hereda_pension = "n"
-
-    @staticmethod
-    def testTasaMenorACero():
-        """
-        Prueba para validar el comportamiento cuando la tasa de administración es menor a cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = 2500000
-        parametros.semanas_laboradas = 1000
-        parametros.ahorro_pensional_a_hoy = 20000
-        parametros.rentabilidad_promedio = 1
-        parametros.tasa_administracion = -3
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-
-    @staticmethod
-    def testTasaMayorATres():
-        """
-        Prueba para validar el comportamiento cuando la tasa de administración es mayor a 3%.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = 5000000
-        parametros.semanas_laboradas = 1300
-        parametros.ahorro_pensional_a_hoy = 20000
-        parametros.rentabilidad_promedio = 1
-        parametros.tasa_administracion = 5
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-
-    @staticmethod
-    def testSalarioActualMenorACero():
-        """
-        Prueba para validar el comportamiento cuando el salario actual es menor a cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = -3000000
-        parametros.semanas_laboradas = 0
-        parametros.ahorro_pensional_a_hoy = 0
-        parametros.rentabilidad_promedio = 0
-        parametros.tasa_administracion = 0
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-
-    @staticmethod
-    def testSalarioActualCero():
-        """
-        Prueba para validar el comportamiento cuando el salario actual es exactamente cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 76
-        parametros.salario_actual = 0
-        parametros.semanas_laboradas = 0
-        parametros.ahorro_pensional_a_hoy = 0
-        parametros.rentabilidad_promedio = 0
-        parametros.tasa_administracion = 0
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 0
-
-    @staticmethod
-    def testRentabilidadPromedioMenorACero():
-        """
-        Prueba para validar el comportamiento cuando la rentabilidad promedio es menor a cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = 15000000
-        parametros.semanas_laboradas = 1100
-        parametros.ahorro_pensional_a_hoy = 400000000
-        parametros.rentabilidad_promedio = -2
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 415000000.0
-
-    @staticmethod
-    def testRentabilidadPromedioCero():
-        """
-        Prueba para validar el comportamiento cuando la rentabilidad promedio es exactamente cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = 10000000
-        parametros.semanas_laboradas = 1290
-        parametros.ahorro_pensional_a_hoy = 130000000
-        parametros.rentabilidad_promedio = 0
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 140000000.0
-
-    @staticmethod
-    def testSemanasLaboradasCero():
-        """
-        Prueba para validar el comportamiento cuando las semanas laboradas son exactamente cero.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = 0
-        parametros.semanas_laboradas = 0
-        parametros.ahorro_pensional_a_hoy = 0
-        parametros.rentabilidad_promedio = 0
-        parametros.tasa_administracion = 0
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 0
-
-    @staticmethod
-    def testEdadPensionMayorLegal():
-        """
-        Prueba para validar el comportamiento cuando la edad de pensión es mayor que la legal.
-        """
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = 2000000
-        parametros.semanas_laboradas = 1400
+        parametros.semanas_laboradas = 500
         parametros.ahorro_pensional_a_hoy = 20000000
-        parametros.rentabilidad_promedio = 1
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 80
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 43935653.751799814
-
-    @staticmethod
-    def testHeredaPension():
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        sexo = "f"
-        estado_civil = "c"
-        parametros.salario_actual = 14000000
-        parametros.semanas_laboradas = 1300
-        parametros.ahorro_pensional_a_hoy = 200000000
-        parametros.rentabilidad_promedio = 1
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
-        sexo = "f"
-        estado_civil = "c"
-        hereda_pension = "s"
-        valor_ahorrado = 214000000.0
-
-    @staticmethod
-    def testAhorroPensionalEsperado_PrimerCaso():
-        parametros = ParametrosPension()
-        parametros.edad = 70
-        parametros.salario_actual = 3000000
-        parametros.semanas_laboradas = 1260
-        parametros.ahorro_pensional_a_hoy = 11000000
-        parametros.rentabilidad_promedio = 2
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
-        sexo = "m"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 14000000.0
-
-    @staticmethod
-    def testAhorroPensionalEsperado_SegundoCaso():
-        parametros = ParametrosPension()
-        parametros.edad = 64
-        parametros.salario_actual = 4000000
-        parametros.semanas_laboradas = 1300
-        parametros.ahorro_pensional_a_hoy = 125000000
-        parametros.rentabilidad_promedio = 2
+        parametros.rentabilidad_promedio = 4
         parametros.tasa_administracion = 1
-        parametros.edad_pension_total = 65
-        sexo = "m"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 132920000.0
+        # salidas esperadas: Error
 
-    @staticmethod
-    def testAhorroPensionalEsperado_TercerCaso():
+    def test_error_salario_negativo(self):
+        """
+        Prueba para un caso donde el salario ingresado es negativo.
+        """
         parametros = ParametrosPension()
-        parametros.edad = 72
-        parametros.salario_actual = 2000000
-        parametros.semanas_laboradas = 1290
-        parametros.ahorro_pensional_a_hoy = 21000000
-        parametros.rentabilidad_promedio = 1
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
+        # entradas erróneas
+        parametros.edad = 35
         sexo = "f"
         estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 23000000.0
-
-    @staticmethod
-    def testAhorroPensionalEsperado_CuartoCaso():
-        parametros = ParametrosPension()
-        parametros.edad = 65
-        parametros.salario_actual = 9000000
-        parametros.semanas_laboradas = 1302
-        parametros.ahorro_pensional_a_hoy = 12000000
-        parametros.rentabilidad_promedio = 1
+        parametros.salario_actual = -3000000
+        parametros.semanas_laboradas = 800
+        parametros.ahorro_pensional_a_hoy = 40000000
+        parametros.rentabilidad_promedio = 3
         parametros.tasa_administracion = 1
-        parametros.edad_pension_total = 65
-        sexo = "m"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 21000000.0
+        # salidas esperadas: Error
 
-    @staticmethod
-    def testAhorroPensionalEsperado_QuintoCaso():
+    def test_error_semanas_laboradas_negativas(self):
+        """
+        Prueba para un caso donde las semanas laboradas ingresadas son negativas.
+        """
         parametros = ParametrosPension()
+        # entradas erróneas
         parametros.edad = 40
-        parametros.salario_actual = 4000000
-        parametros.semanas_laboradas = 1300
-        parametros.ahorro_pensional_a_hoy = 15000000
-        parametros.rentabilidad_promedio = 1
+        sexo = "m"
+        estado_civil = "s"
+        parametros.salario_actual = 3500000
+        parametros.semanas_laboradas = -100  # Error
+        parametros.ahorro_pensional_a_hoy = 60000000
+        parametros.rentabilidad_promedio = 4
         parametros.tasa_administracion = 1
-        parametros.edad_pension_total = 65
-        sexo = "m"
-        estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 102729598.50517015
+        # salidas esperadas: Error
 
-    @staticmethod
-    def testAhorroPensionalEsperado_SextoCaso():
+    def test_error_ahorro_pensional_negativo(self):
+        """
+        Prueba para un caso donde el ahorro pensional a hoy es negativo.
+        """
         parametros = ParametrosPension()
-        parametros.edad = 75
-        parametros.salario_actual = 2500000
-        parametros.semanas_laboradas = 1350
-        parametros.ahorro_pensional_a_hoy = 80000000
-        parametros.rentabilidad_promedio = 1
-        parametros.tasa_administracion = 2
-        parametros.edad_pension_total = 65
+        # entradas erróneas
+        parametros.edad = 50
+        sexo = "f"
+        estado_civil = "c"
+        parametros.salario_actual = 4000000
+        parametros.semanas_laboradas = 1200
+        parametros.ahorro_pensional_a_hoy = -10000000  # Error
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 1
+        # salidas esperadas: Error
+
+    def test_error_rentabilidad_promedio_negativa(self):
+        """
+        Prueba para un caso donde la rentabilidad promedio es negativa.
+        """
+        parametros = ParametrosPension()
+        # entradas erróneas
+        parametros.edad = 55
         sexo = "m"
         estado_civil = "c"
-        hereda_pension = "n"
-        valor_ahorrado = 82500000.0
+        parametros.salario_actual = 5000000
+        parametros.semanas_laboradas = 1500
+        parametros.ahorro_pensional_a_hoy = 100000000
+        parametros.rentabilidad_promedio = -2  # Error
+        parametros.tasa_administracion = 1
+        # salidas esperadas: Error
 
+    def test_error_tasa_administracion_excesiva(self):
+        """
+        Prueba para un caso donde la tasa de administración excede el 3%.
+        """
+        parametros = ParametrosPension()
+        # entradas erróneas
+        parametros.edad = 45
+        sexo = "f"
+        estado_civil = "s"
+        parametros.salario_actual = 3800000
+        parametros.semanas_laboradas = 1000
+        parametros.ahorro_pensional_a_hoy = 70000000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 4  # Error (excede el 3%)
+        # salidas esperadas: Error
+
+    def test_error_edad_muy_alta(self):
+        """
+        Prueba para un caso donde la edad ingresada es demasiado alta (por ejemplo, más de 120 años).
+        """
+        parametros = ParametrosPension()
+        # entradas erróneas
+        parametros.edad = 130  # Error
+        sexo = "m"
+        estado_civil = "c"
+        parametros.salario_actual = 2500000
+        parametros.semanas_laboradas = 1200
+        parametros.ahorro_pensional_a_hoy = 50000000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 1
+        # salidas esperadas: Error
+
+    def test_error_edad_muy_baja(self):
+        """
+        Prueba para un caso donde la edad ingresada es demasiado baja (por ejemplo, menos de 16 años).
+        """
+        parametros = ParametrosPension()
+        # entradas erróneas
+        parametros.edad = 12  # Error
+        sexo = "f"
+        estado_civil = "s"
+        parametros.salario_actual = 1200000
+        parametros.semanas_laboradas = 50
+        parametros.ahorro_pensional_a_hoy = 2000000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 1
+        # salidas esperadas: Error
