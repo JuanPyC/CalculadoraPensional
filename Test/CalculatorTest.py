@@ -105,7 +105,7 @@ class PensionTest(unittest.TestCase):
         valor_pension_esperada = 2600000
 
     # casos Extraordinarios (6)
-    def extraordinario1(self):
+    def test_extraordinario1(self):
         parametros = ParametrosPension()
         # entradas
         parametros.edad = 78
@@ -118,7 +118,7 @@ class PensionTest(unittest.TestCase):
         parametros.tasa_administracion = 2
         # salidas esperadas: semanas laboradas menores que que 1000
 
-    def extraordinario2(self):
+    def test_extraordinario2(self):
         parametros = ParametrosPension()
         # entradas
         parametros.edad = 36
@@ -131,7 +131,7 @@ class PensionTest(unittest.TestCase):
         parametros.tasa_administracion =1
         # salidas esperadas: Su salario es menor que el SMLV
 
-    def extraordinario3(self):
+    def test_extraordinario3(self):
         parametros = ParametrosPension()
         # entradas
         parametros.edad = 77
@@ -144,7 +144,7 @@ class PensionTest(unittest.TestCase):
         parametros.tasa_administracion = 2
         # salidas esperadas: las semanas minimas para pensionarse son 1300
 
-    def extraordinario4(self):
+    def test_extraordinario4(self):
         parametros = ParametrosPension()
         # entradas
         parametros.edad = 40
@@ -157,7 +157,7 @@ class PensionTest(unittest.TestCase):
         parametros.tasa_administracion = 2
         # salidas esperadas: Aun no tienes la edad minima para pensionarse
 
-    def extraordinario5(self):
+    def test_extraordinario5(self):
         parametros = ParametrosPension()
         # entradas
         parametros.edad = 76
@@ -172,7 +172,7 @@ class PensionTest(unittest.TestCase):
         valor_ahorro_pensional_esperado = 12078720000
         valor_pension_esperada = 56000000
 
-    def extraordinario6(self):
+    def test_extraordinario6(self):
         parametros = ParametrosPension()
         # entradas
         parametros.edad = 62
