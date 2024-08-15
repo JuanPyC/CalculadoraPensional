@@ -1,5 +1,5 @@
 import unittest
-
+import Test_Error
 
 class ParametrosPension:
     def __init__(self):
@@ -104,10 +104,88 @@ class PensionTest(unittest.TestCase):
         valor_ahorro_pensional_esperado = 95000000
         valor_pension_esperada = 2600000
 
-    # casos Extraordinarios
+    # casos Extraordinarios (6)
     def extraordinario1(self):
-        pass
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 78
+        sexo = "m"
+        estado_civil = "s"
+        parametros.salario_actual = 1300000
+        parametros.semanas_laboradas = 200
+        parametros.ahorro_pensional_a_hoy = 25000000
+        parametros.rentabilidad_promedio = 1
+        parametros.tasa_administracion = 2
+        # salidas esperadas: semanas laboradas menores que que 1000
 
+    def extraordinario2(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 36
+        sexo = "f"
+        estado_civil = "c"
+        parametros.salario_actual = 500000
+        parametros.semanas_laboradas = 220
+        parametros.ahorro_pensional_a_hoy = 15000000
+        parametros.rentabilidad_promedio =2
+        parametros.tasa_administracion =1
+        # salidas esperadas: Su salario es menor que el SMLV
+
+    def extraordinario3(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 77
+        sexo = "m"
+        estado_civil = "s"
+        parametros.salario_actual = 200000
+        parametros.semanas_laboradas = 700
+        parametros.ahorro_pensional_a_hoy = 30000000
+        parametros.rentabilidad_promedio = 2
+        parametros.tasa_administracion = 2
+        # salidas esperadas: las semanas minimas para pensionarse son 1300
+
+    def extraordinario4(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 40
+        sexo = "f"
+        estado_civil = "s"
+        parametros.salario_actual = 1300000
+        parametros.semanas_laboradas = 1301
+        parametros.ahorro_pensional_a_hoy = 15600000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 2
+        # salidas esperadas: Aun no tienes la edad minima para pensionarse
+
+    def extraordinario5(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 76
+        sexo = "m"
+        estado_civil = "c"
+        parametros.salario_actual = 80000000
+        parametros.semanas_laboradas = 1300
+        parametros.ahorro_pensional_a_hoy = 12078720000
+        parametros.rentabilidad_promedio = 3
+        parametros.tasa_administracion = 2
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 12078720000
+        valor_pension_esperada = 56000000
+
+    def extraordinario6(self):
+        parametros = ParametrosPension()
+        # entradas
+        parametros.edad = 62
+        sexo = "f"
+        estado_civil = "s"
+        parametros.salario_actual = 1300000
+        parametros.semanas_laboradas = 1300
+        parametros.ahorro_pensional_a_hoy = 117843200
+        parametros.rentabilidad_promedio = 2
+        parametros.tasa_administracion = 1
+        # salidas esperadas
+        valor_ahorro_pensional_esperado = 117843200
+        valor_pension_esperada = 490930
 
     # casos de ErROR
     def test_error_edad_negativa(self):
@@ -124,7 +202,7 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = 20000000
         parametros.rentabilidad_promedio = 4
         parametros.tasa_administracion = 1
-        # salidas esperadas: Error
+        # salidas esperadas: EdadNegativaError
 
     def test_error_salario_negativo(self):
         """
@@ -140,7 +218,7 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = 40000000
         parametros.rentabilidad_promedio = 3
         parametros.tasa_administracion = 1
-        # salidas esperadas: Error
+        # salidas esperadas: SalarioNegativoError
 
     def test_error_semanas_laboradas_negativas(self):
         """
@@ -156,7 +234,7 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = 60000000
         parametros.rentabilidad_promedio = 4
         parametros.tasa_administracion = 1
-        # salidas esperadas: Error
+        # salidas esperadas: SemanasLaboradasNegativasError
 
     def test_error_ahorro_pensional_negativo(self):
         """
@@ -172,7 +250,7 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = -10000000  # Error
         parametros.rentabilidad_promedio = 3
         parametros.tasa_administracion = 1
-        # salidas esperadas: Error
+        # salidas esperadas: AhorroPensionalNegativoError
 
     def test_error_rentabilidad_promedio_negativa(self):
         """
@@ -188,7 +266,7 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = 100000000
         parametros.rentabilidad_promedio = -2  # Error
         parametros.tasa_administracion = 1
-        # salidas esperadas: Error
+        # salidas esperadas: RentabilidadPromedioNegativaError
 
     def test_error_tasa_administracion_excesiva(self):
         """
@@ -204,7 +282,7 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = 70000000
         parametros.rentabilidad_promedio = 3
         parametros.tasa_administracion = 4  # Error (excede el 3%)
-        # salidas esperadas: Error
+        # salidas esperadas: TasaAdministracionExcesivaError
 
     def test_error_edad_muy_alta(self):
         """
@@ -220,7 +298,7 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = 50000000
         parametros.rentabilidad_promedio = 3
         parametros.tasa_administracion = 1
-        # salidas esperadas: Error
+        # salidas esperadas: EdadDemasiadoAltaError
 
     def test_error_edad_muy_baja(self):
         """
@@ -236,4 +314,4 @@ class PensionTest(unittest.TestCase):
         parametros.ahorro_pensional_a_hoy = 2000000
         parametros.rentabilidad_promedio = 3
         parametros.tasa_administracion = 1
-        # salidas esperadas: Error
+        # salidas esperadas: EdadDemasiadoBajaError
