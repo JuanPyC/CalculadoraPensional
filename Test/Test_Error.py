@@ -1,8 +1,8 @@
-class EdadNegativaError(Exception):
+class EdadError(Exception):
     pass
 
 
-class SalarioNegativoError(Exception):
+class SalarioActualNegativoError(Exception):
     pass
 
 
@@ -10,7 +10,7 @@ class SemanasLaboradasNegativasError(Exception):
     pass
 
 
-class AhorroPensionalNegativoError(Exception):
+class TasaAdministracionError(Exception):
     pass
 
 
@@ -18,13 +18,5 @@ class RentabilidadPromedioNegativaError(Exception):
     pass
 
 
-class TasaAdministracionExcesivaError(Exception):
-    pass
-
-
-class EdadDemasiadoAltaError(Exception):
-    pass
-
-
-class EdadDemasiadoBajaError(Exception):
+class AhorroPensionalNegativoError(Exception):
     pass
