@@ -8,7 +8,7 @@ class PensionTest(unittest.TestCase):
 
     def setUp(self):
         # Configuración inicial común a todas las pruebas
-        self.parametros = Parameters.ParametrosPension()
+        self.parametros = ParametrosPension()
 
     # Casos normales (6)
     def test_normal_case1(self):
