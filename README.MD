@@ -1,18 +1,35 @@
-## calculadora pensional.
+## Proyecto calculadora pensional.
+Este proyecto en Python ayuda a los usuarios a calcular su ahorro en un fondo de pensiones privado. Ingresando datos básicos como edad, salario y ahorro actual, el programa estima el ahorro futuro y la pensión total, simplificando la gestión y el seguimiento de su fondo de pensiones.
 
-### ¿Que es lo que se espera del proyecto a largo plazo?
 
-Se pienza hacer un programa en Python que consulta el ahorro
-pensional de un fondo privado, permitiendo a los usuarios
-acceder fácilmente a información actualizada sobre su fondo
-de pensiones privado. Al ingresar datos como edad,
-salario actual, ahorro pensional, semanas laboradas,
-rentabilidad promedio, tasa de interés, etc;
-le calcula a la persona cuál va a ser el ahorro pensional
-esperado y el valor de la pensión total. Este tipo de programa
-simplifica el proceso de seguimiento y gestión de los fondos
-de pensiones, ofreciendo transparencia y control a los usuarios
-sobre su futuro financiero. 
+
+## Caracteristicas del proyecto
+ 1.  Cálculo Automático: Realiza cálculos automáticos para estimar el ahorro pensional y la pensión proyectada basándose en los datos ingresados.
+
+
+ 2.   Personalización: Permite a los usuarios ajustar las tasas de interés o rentabilidad de acuerdo con su fondo de pensiones específico.
+
+
+## Estructura del proyecto
+
+Tenemos una carpeta principal llamada "CalculadoraPensional11" dentro tenemos dos carpetas "Test" la cual contiene las pruebas unitarias y "src" contiene por el momento dos carpetas mas "Consola" y "Logica"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### ¿Quien hizo esto?
     - Edison Ospina Arroyave
