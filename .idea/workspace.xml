@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="un pequeño readme">
+    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="Avance Readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +23,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/EdisonOspina16/CalculadoraPensional.git",
+    "accountId": "92c5e9e2-db88-46f3-a873-930d135da1af"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -205,7 +210,15 @@
       <option name="project" value="LOCAL" />
       <updated>1723683069860</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Avance Readme">
+      <option name="closed" value="true" />
+      <created>1725393168931</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1725393168931</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +238,7 @@
     <MESSAGE value="test avanzado" />
     <MESSAGE value="primera entrega en orden" />
     <MESSAGE value="un pequeño readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="un pequeño readme" />
+    <MESSAGE value="Avance Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avance Readme" />
   </component>
 </project>
