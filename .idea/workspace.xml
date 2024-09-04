@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="un pequeño readme">
-      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="arreglos en readme">
+      <change afterPath="$PROJECT_DIR$/Test/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Console/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Test_Error.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Test_Error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +218,31 @@
       <option name="project" value="LOCAL" />
       <updated>1725410815277</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="arreglos en readme">
+      <option name="closed" value="true" />
+      <created>1725411696975</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1725411696975</updated>
+    </task>
+    <task id="LOCAL-00010" summary="arreglos en readme">
+      <option name="closed" value="true" />
+      <created>1725411706877</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1725411706877</updated>
+    </task>
+    <task id="LOCAL-00011" summary="arreglos en readme">
+      <option name="closed" value="true" />
+      <created>1725411848933</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1725411848933</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +263,7 @@
     <MESSAGE value="primera entrega en orden" />
     <MESSAGE value="un pequeño readme" />
     <MESSAGE value="avance en consola" />
-    <option name="LAST_COMMIT_MESSAGE" value="avance en consola" />
+    <MESSAGE value="arreglos en readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="arreglos en readme" />
   </component>
 </project>

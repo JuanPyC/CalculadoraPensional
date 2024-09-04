@@ -10,7 +10,7 @@ y la pensión total, simplificando la gestión y el seguimiento de su fondo de p
 y la pensión proyectada basándose en los datos ingresados.
 
 2. Personalización: Permite a los usuarios ajustar las tasas de interés o rentabilidad
-3. de acuerdo con su fondo de pensiones específico.
+de acuerdo con su fondo de pensiones específico.
 
 
 ## Estructura del proyecto
