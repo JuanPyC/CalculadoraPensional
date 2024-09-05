@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="arreglos en readme">
-      <change afterPath="$PROJECT_DIR$/Test/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Console/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="avance consola">
+      <change afterPath="$PROJECT_DIR$/src/Logic/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Test_Error.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Test_Error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Test_Error.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Test_Error.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" afterDir="false" />
     </list>
@@ -54,6 +52,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\src\Logic" />
+      <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\Logic" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.CalculatorConsole">
     <configuration name="CalculatorConsole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora Pencional" />
@@ -242,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725411848933</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="avance consola">
+      <option name="closed" value="true" />
+      <created>1725419097323</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1725419097323</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -264,6 +276,7 @@
     <MESSAGE value="un pequeño readme" />
     <MESSAGE value="avance en consola" />
     <MESSAGE value="arreglos en readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="arreglos en readme" />
+    <MESSAGE value="avance consola" />
+    <option name="LAST_COMMIT_MESSAGE" value="avance consola" />
   </component>
 </project>

@@ -1,5 +1,11 @@
-from Test import Test_Error
-from src.Logic import Parameters
+import sys
+import os
+
+#sys.path.append("src")
+sys.path.append(os.path.abspath("C:/Users/USER/PycharmProjects/CalculadoraPensional/src"))
+
+from Logic import Test_Error
+from Logic import Parameters
 
 
 def verificarEdad(edad):
@@ -36,20 +42,13 @@ def verificarRentabilidadPromedio(rentabilidad_promedio):
             f"La rentabilidad promedio, la cual es: {rentabilidad_promedio}, debe ser mayor que 0")
 
 
-def verificarEdadPension(edad_pension, sexo):
-    edad_minima = 62 if sexo == 'M' else 57
-    if edad_pension < edad_minima:
-        raise Test_Error.EdadPensionError(
-            f"La edad para pensionarse debe ser mayor o igual a {edad_minima} años para su sexo.")
-
-
 def calcularAhorroPensionalEsperado(parametros):
 
-    VerificarAhorroPensional(parametros.ahorro_pensional_a_hoy)
-    VerificarEdad(parametros.edad)
-    VerificarSalarioActual(parametros.salario_actual)
-    VerificarTasaAdministracion(parametros.tasa_administracion)
-    VerificarSemanasLaboradas(parametros.semanas_laboradas)
+    verificarAhorroPensional(parametros.ahorro_pensional_a_hoy)
+    verificarEdad(parametros.edad)
+    verificarSalarioActual(parametros.salario_actual)
+    verificarTasaAdministracion(parametros.tasa_administracion)
+    verificarSemanasLaboradas(parametros.semanas_laboradas)
 
     # Calcular el tiempo restante hasta la edad de retiro
     edad_retiro = 62 if parametros.sexo == 'M' else 57
@@ -80,6 +79,12 @@ def calcularPensionEsperada(ahorro_pensional_esperado, sexo):
         años_esperados_de_vida = 80 - 57
 
     # Cálculo de la pensión esperada mensual
-    pension_esperada_mensual = ahorro_pensional_esperado / (años_esperados_de_vida * 12)
+    pension = pension_esperada_mensual(ahorro_pensional_esperado, años_esperados_de_vida)
 
-    return pension_esperada_mensual
+    return pension
+
+
+def pension_esperada_mensual(ahorro_pensional_esperado, años_esperados_de_vida):
+    pension_mensual = ahorro_pensional_esperado / (años_esperados_de_vida * 12)
+    return pension_mensual
+

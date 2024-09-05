@@ -1,12 +1,11 @@
 import sys
 import os
 
-
-sys.path.append(os.path.abspath("C:/Users/USER/PycharmProjects/CalculadoraPensional"))
-
-import src.Logic.CalculatorLogic as CalculatorLogic
-from src.Logic.CalculatorLogic import Parameters
-from Test import Test_Error
+#os.path.abspath("src")
+sys.path.append(os.path.abspath("C:/Users/USER/PycharmProjects/CalculadoraPensional/src"))
+from Logic import CalculatorLogic
+from Logic import Parameters
+from Logic import Test_Error
 
 
 def obtener_datos():
@@ -65,7 +64,7 @@ def obtener_datos():
         except ValueError as e:
             print(e)
 
-    parametros = Parameters()  # ver si esta vaina está correctamente definida en CalculatorLogic
+    parametros = Parameters.ParametrosPension()  # ver si esta vaina está correctamente definida en CalculatorLogic
     parametros.edad = edad
     parametros.sexo = sexo
     parametros.salario_actual = salario_actual
@@ -74,12 +73,18 @@ def obtener_datos():
     parametros.ahorro_pensional_a_hoy = ahorro_pensional_a_hoy
     parametros.tasa_administracion = tasa_administracion
 
+
+
     try:
         # Verificar si cumple con la edad mínima para pensionarse
-        CalculatorLogic.verificarEdadPension(parametros.edad, parametros.sexo)
 
-        # Calcular el ahorro pensional esperado
-        CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
+        CalculatorLogic.verificarEdad(parametros.edad)
+
+        # Calculpar el ahorro pensional esperado
+        ahorro_pensional_esperado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
+        print(f"El ahorro pensional esperado es: {ahorro_pensional_esperado}")
+        print(f"La pension esperada mensual es:{CalculatorLogic.calcularPensionEsperada(ahorro_pensional_esperado, sexo)}")
+
     except ValueError as the_error:
         print(f"El valor ingresado es incorrecto: {the_error}")
     except Exception as the_exception:
@@ -88,7 +93,7 @@ def obtener_datos():
 
 def menu_principal():
     while True:
-        print("\n--- Calculadora de Pensional ---")
+        print("\n--- Calculadora Pensional ---")
         print("1. Ingresar datos")
         print("2. Salir")
 

@@ -22,5 +22,6 @@ class AhorroPensionalNegativoError(Exception):
     pass
 
 
-class EdadPensionError(Exception):
+"""class EdadPensionError(Exception):
     pass
+"""
