@@ -1,7 +1,10 @@
 import unittest
-from src.Logic import Parameters
-from src.Logic import CalculatorLogic
-import Test_Error
+import sys
+import os
+
+from Logic import Parameters
+from Logic import CalculatorLogic
+from Logic import Exceptions
 
 
 class PensionTest(unittest.TestCase):
@@ -23,10 +26,10 @@ class PensionTest(unittest.TestCase):
         self.parametros.tasa_administracion = 1
 
         # Salidas esperadas
-        valor_ahorrado = 1000000
-        valor_pencion_esperada = CalculatorLogic.calcularAhorroPencioanlEsperado(parametros)
+        ahorro_pensional_esperado = 1000000
+         = CalculatorLogic.calcularAhorroPencioanlEsperado(parametros)
 
-        self.assertEqual(valor_ahorrado, valor_pencion_esperada)
+        self.assertEqual(valor_pencion_esperada)
 
     def test_normal_case2(self):
         # Entradas

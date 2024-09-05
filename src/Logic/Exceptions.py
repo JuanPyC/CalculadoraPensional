@@ -20,8 +20,3 @@ class RentabilidadPromedioNegativaError(Exception):
 
 class AhorroPensionalNegativoError(Exception):
     pass
-
-
-"""class EdadPensionError(Exception):
-    pass
-"""

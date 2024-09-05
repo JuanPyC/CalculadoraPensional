@@ -15,7 +15,7 @@ de acuerdo con su fondo de pensiones específico.
 
 ## Estructura del proyecto
 
-Tenemos una carpeta principal llamada "CalculadoraPensional11" dentro tenemos dos carpetas "Test" la cual contiene
+Tenemos una carpeta principal llamada "CalculadoraPensional" dentro tenemos dos carpetas "Test" la cual contiene
 las pruebas unitarias y "src" contiene por el momento dos carpetas mas "Consola" y "Logica"
 
 

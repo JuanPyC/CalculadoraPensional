@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="avance consola">
-      <change afterPath="$PROJECT_DIR$/src/Logic/__init__.py" afterDir="false" />
+    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="finish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/Test_Error.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Test_Error.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/CalculatorTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CalculatorTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logic/Test_Error.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/Exceptions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,19 +40,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for CalculatorTest.PensionTest.testAhorroPensionalAHoyMenorACero.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CalculatorConsole.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CalculatorLogic.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/PycharmProjects/CalculadoraPensional&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for CalculatorTest.PensionTest.testAhorroPensionalAHoyMenorACero.executor": "Run",
+    "Python tests.Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja.executor": "Run",
+    "Python.CalculatorConsole.executor": "Run",
+    "Python.CalculatorLogic.executor": "Run",
+    "Python.CalculatorTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/USER/PycharmProjects/CalculadoraPensional",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\src\Logic" />
@@ -103,6 +105,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="CalculatorTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Calculadora Pencional" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test/CalculatorTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for CalculatorTest.PensionTest.testAhorroPensionalAHoyMenorACero" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="Calculadora Pencional" />
       <option name="ENV_FILES" value="" />
@@ -136,6 +160,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.CalculatorConsole" />
+        <item itemvalue="Python.CalculatorTest" />
         <item itemvalue="Python.CalculatorLogic" />
         <item itemvalue="Python tests.Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja" />
         <item itemvalue="Python tests.Python tests for CalculatorTest.PensionTest.testAhorroPensionalAHoyMenorACero" />
@@ -254,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725419097323</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="finish">
+      <option name="closed" value="true" />
+      <created>1725573412278</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1725573412278</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,6 +310,7 @@
     <MESSAGE value="avance en consola" />
     <MESSAGE value="arreglos en readme" />
     <MESSAGE value="avance consola" />
-    <option name="LAST_COMMIT_MESSAGE" value="avance consola" />
+    <MESSAGE value="finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish" />
   </component>
 </project>
