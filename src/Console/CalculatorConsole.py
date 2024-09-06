@@ -35,7 +35,7 @@ def obtener_datos():
     # Ciclo para obtener y validar el salario actual
     while True:
         try:
-            salario_actual = int(input("Ingrese su salario actual: "))  # Asegura que sea un número entero
+            salario_actual = int(input("Ingrese su salario actual: "))
             break
         except ValueError:
             print("Debe ingresar un valor numérico para el salario actual.")
@@ -43,7 +43,7 @@ def obtener_datos():
     # Ciclo para obtener y validar las semanas laboradas
     while True:
         try:
-            semanas_laboradas = int(input("Ingrese sus semanas laboradas a hoy: "))  # Debe ser un número entero
+            semanas_laboradas = int(input("Ingrese sus semanas laboradas a hoy: "))
             break
         except ValueError:
             print("Debe ingresar un valor numérico para las semanas laboradas.")
@@ -51,7 +51,7 @@ def obtener_datos():
     # Ciclo para obtener y validar el ahorro pensional a la fecha
     while True:
         try:
-            ahorro_pensional_a_hoy = int(input("Ingrese su ahorro pensional a hoy: "))  # Debe ser un número entero
+            ahorro_pensional_a_hoy = int(input("Ingrese su ahorro pensional a hoy: "))
             break
         except ValueError:
             print("Debe ingresar un valor numérico para el ahorro pensional a hoy.")
@@ -61,7 +61,7 @@ def obtener_datos():
         try:
             rentabilidad_promedio = float(
                 input("Ingrese la rentabilidad promedio del fondo (debe ser mayor a 0 y menor a 3): "))
-            if not 0 < rentabilidad_promedio < 3:  # Valida que la rentabilidad esté en el rango válido
+            if not 0 < rentabilidad_promedio < 3:
                 raise ValueError("La rentabilidad promedio debe ser mayor a 0 y menor a 3.")
             break
         except ValueError as e:
@@ -72,7 +72,7 @@ def obtener_datos():
         try:
             tasa_administracion = float(
                 input("Ingrese la tasa de administración del fondo (debe ser mayor a 0 y menor a 3): "))
-            if not 0 < tasa_administracion < 3:  # Verifica que esté dentro del rango válido
+            if not 0 < tasa_administracion < 3:
                 raise ValueError("La tasa de administración debe ser mayor a 0 y menor a 3.")
             break
         except ValueError as e:
