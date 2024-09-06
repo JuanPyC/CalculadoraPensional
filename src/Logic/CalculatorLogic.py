@@ -3,9 +3,8 @@ import os
 
 #sys.path.append("src")
 sys.path.append(os.path.abspath("C:/Users/USER/PycharmProjects/CalculadoraPensional/src"))
-
-from Logic import Exceptions
 from Logic import Parameters
+from Logic import Exceptions
 
 
 def verificarEdad(edad):
@@ -55,8 +54,8 @@ def calcularAhorroPensionalEsperado(parametros):
     años_restantes = edad_retiro - parametros.edad
 
     # Asegurarse de que los años restantes sean positivos
-    if años_restantes <= 0:
-        raise ValueError("La edad actual ya supera o iguala la edad de retiro")
+    """if años_restantes <= 0:
+        raise ValueError("La edad actual ya supera o iguala la edad de retiro")"""
 
     semanas_restantes = años_restantes * 52
 

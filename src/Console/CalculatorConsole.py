@@ -1,7 +1,7 @@
 import sys
 import os
 
-#os.path.abspath("src")
+#sys.path.append("src")
 sys.path.append(os.path.abspath("C:/Users/USER/PycharmProjects/CalculadoraPensional/src"))
 from Logic import CalculatorLogic
 from Logic import Parameters
@@ -9,6 +9,7 @@ from Logic import Exceptions
 
 
 def obtener_datos():
+
     while True:
         try:
             edad = int(input("Ingrese su edad: "))
