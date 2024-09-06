@@ -22,6 +22,6 @@ las pruebas unitarias y "src" contiene por el momento dos carpetas mas "Consola"
 - Para abrirlo desde la consola, debes buscar el archivo de la siguiente forma: "python src/Console/CalculatorConsole.py" y presionar la tecla enter.
 - Para ejecutar las pruebas unitarias debes escribir "python Test/CalculatorTest.py" y presionar la tecla enter.
 
-### ¿Quien hizo esto?
+### ¿Autores?
     - Edison Ospina Arroyave
     - Esteban Parra Zapata
