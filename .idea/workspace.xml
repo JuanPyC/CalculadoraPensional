@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="README.MD">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" afterDir="false" />
-    </list>
+    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="ultimos ajustes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -56,7 +53,7 @@
       <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\Logic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CalculatorTest">
+  <component name="RunManager" selected="Python.CalculatorConsole">
     <configuration name="CalculatorConsole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora Pencional" />
       <option name="ENV_FILES" value="" />
@@ -155,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.CalculatorTest" />
         <item itemvalue="Python.CalculatorConsole" />
+        <item itemvalue="Python.CalculatorTest" />
         <item itemvalue="Python.CalculatorLogic" />
         <item itemvalue="Python tests.Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja" />
         <item itemvalue="Python tests.Python tests for CalculatorTest.PensionTest.testAhorroPensionalAHoyMenorACero" />
@@ -315,7 +312,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725598280393</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="ultimos ajustes">
+      <option name="closed" value="true" />
+      <created>1725598585148</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1725598585148</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,6 +348,7 @@
     <MESSAGE value="test melo" />
     <MESSAGE value="codigo comentado" />
     <MESSAGE value="README.MD" />
-    <option name="LAST_COMMIT_MESSAGE" value="README.MD" />
+    <MESSAGE value="ultimos ajustes" />
+    <option name="LAST_COMMIT_MESSAGE" value="ultimos ajustes" />
   </component>
 </project>
