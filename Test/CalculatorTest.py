@@ -10,9 +10,10 @@ from Logic import Exceptions
 
 
 class PensionTest(unittest.TestCase):
+    """ Casos normales: Estas pruebas evalúan escenarios realistas donde
+    los parámetros están dentro de los rangos válidos.   """
 
-    # Casos normales (6)
-    def test_normal_case1(self):
+    def test_Caso_Norma1(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 65
@@ -28,7 +29,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_normal_case2(self):
+    def test_Caso_Norma2(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 30
@@ -44,7 +45,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_normal_case3(self):
+    def test_Caso_Norma3(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 40
@@ -60,7 +61,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_normal_case4(self):
+    def test_Caso_Norma4(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 45
@@ -76,7 +77,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_normal_case5(self):
+    def test_Caso_Norma5(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 50
@@ -92,7 +93,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_normal_case6(self):
+    def test_Caso_Normal6(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 25
@@ -108,9 +109,10 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    # casos Extraordinarios (6)
+    """ Casos extraordinarios: Evaluamos casos fuera de los escenarios comunes
+    pero todavía posibles.    """
 
-    def test_extraordinario1(self):
+    def test_Extraordinario1(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 35
@@ -126,7 +128,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_extraordinario2(self):
+    def test_Extraordinario2(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 36
@@ -142,7 +144,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_extraordinario3(self):
+    def test_Extraordinario3(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 77
@@ -158,7 +160,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_extraordinario4(self):
+    def test_Extraordinario4(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 40
@@ -174,7 +176,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_extraordinario5(self):
+    def test_Extraordinario5(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 76
@@ -190,7 +192,7 @@ class PensionTest(unittest.TestCase):
         resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
         self.assertEqual(resultado, ahorro_total)
 
-    def test_extraordinario6(self):
+    def test_Extraordinario6(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
         parametros.edad = 62
@@ -202,8 +204,13 @@ class PensionTest(unittest.TestCase):
         parametros.rentabilidad_promedio = 2
         parametros.tasa_administracion = 1
 
+        ahorro_total = 476035.1165980796
+        resultado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
+        self.assertEqual(resultado, ahorro_total)
 
-    # Casos de Error...
+    """ Casos de error: Validamos que el sistema arroje las excepciones
+    correctas cuando se ingresan valores inválidos.   """
+
     def test_error_edad_muy_alta(self):
         parametros = Parameters.ParametrosPension()
         # Entradas
@@ -231,7 +238,7 @@ class PensionTest(unittest.TestCase):
         parametros.rentabilidad_promedio = 3
         parametros.tasa_administracion = 1
 
-        self.assertRaises(Exceptions.EdadError,CalculatorLogic.calcularAhorroPensionalEsperado, parametros)
+        self.assertRaises(Exceptions.EdadError, CalculatorLogic.calcularAhorroPensionalEsperado, parametros)
 
     def test_error_salario_negativo(self):
         parametros = Parameters.ParametrosPension()
@@ -311,7 +318,6 @@ class PensionTest(unittest.TestCase):
 
 # Este fragmento de codigo permite ejecutar la prueba individualmente
 # Va fijo en todas las pruebas
-
 
 if __name__ == '__main__':
     # print( Payment.calcPayment.__doc__)
