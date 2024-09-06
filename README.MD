@@ -4,7 +4,6 @@ Ingresando datos básicos como edad, salario y ahorro actual, el programa estima
 y la pensión total, simplificando la gestión y el seguimiento de su fondo de pensiones.
 
 
-
 ## Caracteristicas del proyecto
  1.  Cálculo Automático: Realiza cálculos automáticos para estimar el ahorro pensional
 y la pensión proyectada basándose en los datos ingresados.
@@ -17,21 +16,6 @@ de acuerdo con su fondo de pensiones específico.
 
 Tenemos una carpeta principal llamada "CalculadoraPensional" dentro tenemos dos carpetas "Test" la cual contiene
 las pruebas unitarias y "src" contiene por el momento dos carpetas mas "Consola" y "Logica"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
