@@ -3,7 +3,7 @@ import sys
 import os
 
 sys.path.append("src")
-#sys.path.append(os.path.abspath("C:/Users/USER/PycharmProjects/CalculadoraPensional/src"))
+
 from Logic import Parameters
 from Logic import CalculatorLogic
 from Logic import Exceptions

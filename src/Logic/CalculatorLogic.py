@@ -2,7 +2,7 @@ import sys
 import os
 
 sys.path.append("src")
-#sys.path.append(os.path.abspath("C:/Users/USER/PycharmProjects/CalculadoraPensional/src"))
+
 
 """Se importan los módulos necesarios desde la lógica de la calculadora
 pensional y excepciones personalizadas"""

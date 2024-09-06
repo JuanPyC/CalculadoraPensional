@@ -17,7 +17,10 @@ de acuerdo con su fondo de pensiones específico.
 Tenemos una carpeta principal llamada "CalculadoraPensional" dentro tenemos dos carpetas "Test" la cual contiene
 las pruebas unitarias y "src" contiene por el momento dos carpetas mas "Consola" y "Logica"
 
-
+## Como abrir desde tu consola: 
+- Para abrirlo desde la terminal, debes presionar la tecla windows y buscar en la barra, console prompt(cmd), escribe "cd CalculadoraPensional", y presiona enter
+- Para abrirlo desde la consola, debes buscar el archivo de la siguiente forma: "python src/Console/CalculatorConsole.py" y presionar la tecla enter.
+- Para ejecutar las pruebas unitarias debes escribir "python Test/CalculatorTest.py" y presionar la tecla enter.
 
 ### ¿Quien hizo esto?
     - Edison Ospina Arroyave
