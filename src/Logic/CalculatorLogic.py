@@ -10,62 +10,49 @@ pensional y excepciones personalizadas"""
 from Logic import Parameters
 from Logic import Exceptions
 
-"""Función para verificar que la edad ingresada esté dentro de un rango aceptable"""
-
 
 def verificarEdad(edad):
+    """Función para verificar que la edad ingresada esté dentro de un rango aceptable"""
     if edad < 18 or edad > 115:
         raise Exceptions.EdadError(f"Su edad, la cual es: {edad}, debe ser mayor a 18 y menor a 115")
 
 
-"""Función para verificar que el salario actual sea válido"""
-
-
 def verificarSalarioActual(salario_actual):
+    """Función para verificar que el salario actual sea válido"""
     if salario_actual < 0:
         raise Exceptions.SalarioActualNegativoError(f"Su salario, el cual es: {salario_actual}, debe ser mayor a 0")
 
 
-""" Función para verificar que las semanas laboradas sean positivas"""
-
-
 def verificarSemanasLaboradas(semanas_laboradas):
+    """ Función para verificar que las semanas laboradas sean positivas"""
     if semanas_laboradas < 0:
         raise Exceptions.SemanasLaboradasNegativasError(
             f"Las semanas laboradas, las cuales son: {semanas_laboradas}, deben ser mayores a 0")
 
 
-""" Función para verificar que la tasa de administración esté en un rango válido (0-3%)"""
-
-
 def verificarTasaAdministracion(tasa_administracion):
+    """ Función para verificar que la tasa de administración esté en un rango válido (0-3%)"""
     if tasa_administracion < 0 or tasa_administracion > 3:
         raise Exceptions.TasaAdministracionError(
             f"La tasa de administración, la cual es: {tasa_administracion}, debe ser mayor a 0 y menor a 3")
 
 
-""" Función para verificar que el ahorro pensional no sea negativo"""
-
-
 def verificarAhorroPensional(ahorro_pensional_a_hoy):
+    """ Función para verificar que el ahorro pensional no sea negativo"""
     if ahorro_pensional_a_hoy < 0:
         raise Exceptions.AhorroPensionalNegativoError(
             f"El ahorro pensional a hoy, el cual es: {ahorro_pensional_a_hoy}, debe ser mayor a 0")
 
 
-""" Función para verificar que la rentabilidad promedio sea positiva"""
-
-
 def verificarRentabilidadPromedio(rentabilidad_promedio):
+    """ Función para verificar que la rentabilidad promedio sea positiva"""
     if rentabilidad_promedio < 0:
         raise Exceptions.RentabilidadPromedioNegativaError(
             f"La rentabilidad promedio, la cual es: {rentabilidad_promedio}, debe ser mayor que 0")
 
 
-""" Función para calcular el ahorro pensional esperado"""
-
-
 def calcularAhorroPensionalEsperado(parametros):
+    """ Función para calcular el ahorro pensional esperado"""
     # Se realizan las verificaciones para los parámetros ingresados
     verificarAhorroPensional(parametros.ahorro_pensional_a_hoy)
     verificarEdad(parametros.edad)
@@ -90,10 +77,8 @@ def calcularAhorroPensionalEsperado(parametros):
     return ahorro_pensional_esperado
 
 
-""" Función para calcular la pensión esperada basada en el ahorro y el sexo"""
-
-
 def calcularPensionEsperada(ahorro_pensional_esperado, sexo):
+    """ Función para calcular la pensión esperada basada en el ahorro y el sexo"""
     # La expectativa de vida promedio es de 80 años
     if sexo == 'M':
         años_esperados_de_vida = 80 - 62
@@ -106,9 +91,8 @@ def calcularPensionEsperada(ahorro_pensional_esperado, sexo):
     return pension
 
 
-""" Función auxiliar para calcular la pensión mensual esperada"""
-
-
 def pension_esperada_mensual(ahorro_pensional_esperado, años_esperados_de_vida):
+    """ Función auxiliar para calcular la pensión mensual esperada"""
+
     pension_mensual = ahorro_pensional_esperado / (años_esperados_de_vida * 12)
     return pension_mensual
