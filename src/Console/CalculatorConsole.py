@@ -4,20 +4,23 @@ import os
 sys.path.append("src")
 
 
-"""Importa los módulos necesarios: lógica de la calculadora pensional,
- parámetros y excepciones personalizadas."""
+"""
+Imports the necessary modules: pension calculator logic,
+parameters, and custom exceptions.
+"""
 
 from Logic import CalculatorLogic
 from Logic import Parameters
 from Logic import Exceptions
 
-""" Función para obtener los datos ingresados por el usuario"""
-
-
 def obtener_datos():
+    """
+    Función para obtener los datos ingresados por el usuario
+    """
+
     while True:
         try:
-            edad = int(input("Ingrese su edad: "))  # Se asegura que el dato ingresado sea un número entero
+            age = int(input("Ingrese su edad: "))  # Se asegura que el dato ingresado sea un número entero
             break  # Si el ingreso es correcto, sale del ciclo
         except ValueError:
             print("Debe ingresar un valor numérico para la edad.")  # Muestra mensaje si el dato no es válido
@@ -25,8 +28,8 @@ def obtener_datos():
     # Ciclo para obtener y validar el sexo
     while True:
         try:
-            sexo = input("Ingrese su sexo (M para masculino o F para femenino): ").upper()  # Convierte a mayúsculas
-            if sexo not in ['M', 'F']:  # Valida que el sexo sea 'M' o 'F'
+            gender = input("Ingrese su sexo (M para masculino o F para femenino): ").upper()  # Convierte a mayúsculas
+            if gender not in ['M', 'F']:  # Valida que el sexo sea 'M' o 'F'
                 raise ValueError("Debe ingresar 'M' para masculino o 'F' para femenino.")
             break
         except ValueError as e:
@@ -35,7 +38,7 @@ def obtener_datos():
     # Ciclo para obtener y validar el salario actual
     while True:
         try:
-            salario_actual = int(input("Ingrese su salario actual: "))
+            current_salary = int(input("Ingrese su salario actual: "))
             break
         except ValueError:
             print("Debe ingresar un valor numérico para el salario actual.")
@@ -43,7 +46,7 @@ def obtener_datos():
     # Ciclo para obtener y validar las semanas laboradas
     while True:
         try:
-            semanas_laboradas = int(input("Ingrese sus semanas laboradas a hoy: "))
+            weeks_worked = int(input("Ingrese sus semanas laboradas a hoy: "))
             break
         except ValueError:
             print("Debe ingresar un valor numérico para las semanas laboradas.")
@@ -51,7 +54,7 @@ def obtener_datos():
     # Ciclo para obtener y validar el ahorro pensional a la fecha
     while True:
         try:
-            ahorro_pensional_a_hoy = int(input("Ingrese su ahorro pensional a hoy: "))
+            current_pension_savings = int(input("Ingrese su ahorro pensional a hoy: "))
             break
         except ValueError:
             print("Debe ingresar un valor numérico para el ahorro pensional a hoy.")
@@ -59,9 +62,13 @@ def obtener_datos():
     # Ciclo para obtener y validar la rentabilidad promedio
     while True:
         try:
-            rentabilidad_promedio = float(
+            average_return = float(
                 input("Ingrese la rentabilidad promedio del fondo (debe ser mayor a 0 y menor a 3): "))
-            if not 0 < rentabilidad_promedio < 3:
+
+            RENTABILIDAD_PROMEDIO_MINIMO = 0
+            RENTABILIDAD_PROMEDIO_MAXIMO = 3
+
+            if not RENTABILIDAD_PROMEDIO_MINIMO < average_return < RENTABILIDAD_PROMEDIO_MAXIMO:
                 raise ValueError("La rentabilidad promedio debe ser mayor a 0 y menor a 3.")
             break
         except ValueError as e:
@@ -70,36 +77,43 @@ def obtener_datos():
     # Ciclo para obtener y validar la tasa de administración del fondo
     while True:
         try:
-            tasa_administracion = float(
+            management_rate = float(
                 input("Ingrese la tasa de administración del fondo (debe ser mayor a 0 y menor a 3): "))
-            if not 0 < tasa_administracion < 3:
+
+            TASA_ADMINISTRACION_MINIMA = 0
+            TASA_ADMINISTRACION_MAXIMA = 3
+
+            if not TASA_ADMINISTRACION_MINIMA < management_rate < TASA_ADMINISTRACION_MAXIMA:
                 raise ValueError("La tasa de administración debe ser mayor a 0 y menor a 3.")
             break
         except ValueError as e:
             print(e)
-    """ Se crea una instancia de la clase 'ParametrosPension'
-    que almacena los valores ingresados"""
 
-    parametros = Parameters.ParametrosPension()
-    parametros.edad = edad
-    parametros.sexo = sexo
-    parametros.salario_actual = salario_actual
-    parametros.semanas_laboradas = semanas_laboradas
-    parametros.rentabilidad_promedio = rentabilidad_promedio
-    parametros.ahorro_pensional_a_hoy = ahorro_pensional_a_hoy
-    parametros.tasa_administracion = tasa_administracion
+    """
+    Se crea una instancia de la clase 'ParametrosPension'
+    que almacena los valores ingresados
+    """
+
+    parameters = Parameters.ParametrosPension()
+    parameters.age = age
+    parameters.gender = gender
+    parameters.current_salary = current_salary
+    parameters.weeks_worked = weeks_worked
+    parameters.current_pension_savings = current_pension_savings
+    parameters.average_return = average_return
+    parameters.management_rate = management_rate
 
     try:
+        CalculatorLogic.verify_age(parameters.age)
 
-        CalculatorLogic.verificarEdad(parametros.edad)
-
-        ahorro_pensional_esperado = CalculatorLogic.calcularAhorroPensionalEsperado(parametros)
-        print(f"El ahorro pensional esperado es: {ahorro_pensional_esperado}")
+        expected_pension_savings = CalculatorLogic.calculate_expected_pension_savings(parameters)
+        print(f"El ahorro pensional esperado es: {expected_pension_savings}")
 
         print(
-            f"La pension esperada mensual es:{CalculatorLogic.calcular_pension_esperada(ahorro_pensional_esperado, sexo)}")
+            f"La pensión esperada mensual es: {CalculatorLogic.calculate_expected_pension(expected_pension_savings, gender)}")
 
     # Maneja cualquier error de valor incorrecto ingresado por el usuario
+
     except ValueError as the_error:
         print(f"El valor ingresado es incorrecto: {the_error}")
 
@@ -108,20 +122,21 @@ def obtener_datos():
         print(f"No puede continuar, ocurrió un problema: {the_exception}")
 
 
-""" Función que muestra el menú interactivo del programa"""
+def main_menu():
+    """
+    Función que muestra el menú interactivo del programa
+    """
 
-
-def menu_principal():
     while True:
         print("\n--- Calculadora Pensional ---")  # Título del menú
         print("1. Ingresar datos")
         print("2. Salir")
 
-        opcion = input("Seleccione una opción: ")
+        option = input("Seleccione una opción: ")
 
-        if opcion == "1":
+        if option == "1":
             obtener_datos()
-        elif opcion == "2":
+        elif option == "2":
             print("Saliendo del programa...")
             sys.exit(0)
         else:
@@ -129,4 +144,4 @@ def menu_principal():
 
 
 # Inicia el programa mostrando el menú principal
-menu_principal()
+main_menu()

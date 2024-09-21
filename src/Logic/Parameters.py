@@ -1,9 +1,9 @@
 class ParametrosPension:
     def __init__(self):
-        self.edad = None
-        self.sexo = None
-        self.salario_actual = None
-        self.semanas_laboradas = None
-        self.ahorro_pensional_a_hoy = None
-        self.rentabilidad_promedio = None
-        self.tasa_administracion = None
+        self.age = None  # Edad
+        self.gender = None  # Genero
+        self.current_salary = None  # Salario Actual
+        self.weeks_worked = None  # Semanas Laboradas
+        self.current_pension_savings = None  # Ahorro Pensional A Hoy
+        self.average_return = None  # Rentabilidad Promedio
+        self.management_rate = None  # Tasa Administración
