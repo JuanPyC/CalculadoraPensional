@@ -97,7 +97,7 @@ def obtener_datos():
         print(f"El ahorro pensional esperado es: {ahorro_pensional_esperado}")
 
         print(
-            f"La pension esperada mensual es:{CalculatorLogic.calcularPensionEsperada(ahorro_pensional_esperado, sexo)}")
+            f"La pension esperada mensual es:{CalculatorLogic.calcular_pension_esperada(ahorro_pensional_esperado, sexo)}")
 
     # Maneja cualquier error de valor incorrecto ingresado por el usuario
     except ValueError as the_error:
