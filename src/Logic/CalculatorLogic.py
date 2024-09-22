@@ -94,7 +94,6 @@ def calculate_expected_pension_savings(parameters):
       """
 
     verify_age(parameters.age)
-    verify_gender(parameters.gender)
     verify_current_salary(parameters.current_salary)
     verify_weeks_worked(parameters.weeks_worked)
     verify_pension_savings(parameters.current_pension_savings)
