@@ -97,6 +97,7 @@ def calculate_expected_pension_savings(parameters):
     verify_current_salary(parameters.current_salary)
     verify_weeks_worked(parameters.weeks_worked)
     verify_pension_savings(parameters.current_pension_savings)
+    verify_average_profitability(parameters.average_return)
     verify_management_rate(parameters.management_rate)
 
     # Determina la edad de retiro según el sexo (62 años para hombres, 57 para mujeres)

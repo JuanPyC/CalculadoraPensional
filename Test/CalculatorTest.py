@@ -170,7 +170,7 @@ class PensionTest(unittest.TestCase):
         estado_civil = "s"
         parameters.current_salary = 1300000
         parameters.weeks_worked = 1301
-        parameters.current_salary = 15600000
+        parameters.current_pension_savings = 15600000
         parameters.average_return = 3
         parameters.management_rate = 2
 
