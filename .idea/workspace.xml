@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="INGLES">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CalculatorGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CalculatorGUI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic/CalculatorLogic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/CalculatorTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CalculatorTest.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +58,7 @@
       <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\Logic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CalculatorGUI">
+  <component name="RunManager" selected="Python.CalculatorTest">
     <configuration name="CalculatorConsole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora Pencional" />
       <option name="ENV_FILES" value="" />
@@ -148,28 +147,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Exceptions" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora Pencional" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/Logic" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;CalculatorTest.PensionTest.test_error_edad_muy_baja&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/Logic/Exceptions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CalculatorTest" />
+        <item itemvalue="Python.Exceptions" />
         <item itemvalue="Python.CalculatorGUI" />
         <item itemvalue="Python.CalculatorConsole" />
-        <item itemvalue="Python.CalculatorTest" />
         <item itemvalue="Python.CalculatorLogic" />
-        <item itemvalue="Python tests.Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja" />
       </list>
     </recent_temporary>
   </component>
