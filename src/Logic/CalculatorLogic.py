@@ -46,6 +46,18 @@ def verify_weeks_worked(weeks_worked):
             f"Las semanas laboradas, las cuales son: {weeks_worked}, deben ser mayores a 0")
 
 
+def verify_pension_savings(current_pension_savings):
+    """
+    Función para verificar que el ahorro pensional no sea negativo.
+    """
+
+    AHORRO_PENSIONAL_MINIMO = 0
+
+    if current_pension_savings < AHORRO_PENSIONAL_MINIMO:
+        raise Exceptions.AhorroPensionalNegativoError(
+            f"El ahorro pensional a hoy, el cual es: {current_pension_savings}, debe ser mayor a 0")
+
+
 def verify_management_rate(management_rate):
     """
     Función para verificar que la tasa de administración esté en un rango válido (0-3%).
@@ -59,19 +71,7 @@ def verify_management_rate(management_rate):
             f"La tasa de administración, la cual es: {management_rate}, debe ser mayor a 0 y menor a 3")
 
 
-def verify_pension_savings(current_pension_savings):
-    """
-    Función para verificar que el ahorro pensional no sea negativo.
-    """
-
-    AHORRO_PENSIONAL_MINIMO = 0
-
-    if current_pension_savings < AHORRO_PENSIONAL_MINIMO:
-        raise Exceptions.AhorroPensionalNegativoError(
-            f"El ahorro pensional a hoy, el cual es: {current_pension_savings}, debe ser mayor a 0")
-
-
-def check_average_profitability(average_return):
+def verify_average_profitability(average_return):
     """
     Función para verificar que la rentabilidad promedio sea positiva.
     """
@@ -172,6 +172,5 @@ def expected_monthly_pension(expected_pension_savings, expected_years_of_life):
     if expected_pension_savings < AHORRO_PENSIONAL_MINIMO:
         raise ValueError("El ahorro pensional esperado no puede ser negativo.")
 
-    # Calcular la pensión mensual esperada
-    pension_mensual = expected_pension_savings / (expected_years_of_life * MESES_POR_AÑO)
-    return pension_mensual
+    monthly_pension = expected_pension_savings / (expected_years_of_life * MESES_POR_AÑO)
+    return monthly_pension
