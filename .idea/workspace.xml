@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="INGLES TEST">
+    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="ahora todo funciona correctamente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test/CalculatorTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test/CalculatorTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CalculatorGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CalculatorGUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,22 +36,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.Python tests for CalculatorTest.PensionTest.testAhorroPensionalAHoyMenorACero.executor": "Run",
-    "Python tests.Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja.executor": "Run",
-    "Python.CalculatorConsole.executor": "Run",
-    "Python.CalculatorGUI.executor": "Run",
-    "Python.CalculatorLogic.executor": "Run",
-    "Python.CalculatorTest.executor": "Run",
-    "Python.Exceptions.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/USER/PycharmProjects/CalculadoraPensional",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.Python tests for CalculatorTest.PensionTest.testAhorroPensionalAHoyMenorACero.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for CalculatorTest.PensionTest.test_error_edad_muy_baja.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CalculatorConsole.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CalculatorGUI.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CalculatorLogic.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CalculatorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Exceptions.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/PycharmProjects/CalculadoraPensional&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\src" />
@@ -59,7 +59,7 @@
       <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\Logic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CalculatorTest">
+  <component name="RunManager" selected="Python.CalculatorGUI">
     <configuration name="CalculatorConsole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora Pencional" />
       <option name="ENV_FILES" value="" />
@@ -172,9 +172,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.CalculatorGUI" />
         <item itemvalue="Python.CalculatorTest" />
         <item itemvalue="Python.Exceptions" />
-        <item itemvalue="Python.CalculatorGUI" />
         <item itemvalue="Python.CalculatorConsole" />
         <item itemvalue="Python.CalculatorLogic" />
       </list>
@@ -404,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1727231840245</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="ahora todo funciona correctamente">
+      <option name="closed" value="true" />
+      <created>1727232717702</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1727232717702</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,6 +445,7 @@
     <MESSAGE value="Arreglado los wtf" />
     <MESSAGE value="INGLES" />
     <MESSAGE value="INGLES TEST" />
-    <option name="LAST_COMMIT_MESSAGE" value="INGLES TEST" />
+    <MESSAGE value="ahora todo funciona correctamente" />
+    <option name="LAST_COMMIT_MESSAGE" value="ahora todo funciona correctamente" />
   </component>
 </project>

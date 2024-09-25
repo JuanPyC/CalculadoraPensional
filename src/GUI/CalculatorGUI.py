@@ -3,7 +3,7 @@ sys.path.append(r"C:\Users\USER\PycharmProjects\CalculadoraPensional\src")
 #sys.path.append("src")
 
 from Logic import CalculatorLogic
-from Logic import Parameters
+from Logic.Parameters import ParametrosPension
 from Logic import Exceptions
 
 from kivy.app import App
@@ -46,14 +46,18 @@ class CalculatorApp(App):
         self.tasa_administracion = TextInput(font_size=30)
         contenedor.add_widget(self.tasa_administracion)
 
+        # Crear el Label donde se mostrará la pensión esperada
+        self.resultado_label = Label(text="Pensión esperada: ")
+        contenedor.add_widget(self.resultado_label)
+        contenedor.add_widget(Label())  # Espacio vacío
+
         calcular_btn = Button(text="Calcular Pensión", font_size=30, on_press=self.calcular_pension_esperada)
         contenedor.add_widget(calcular_btn)
-        contenedor.add_widget(Label())  # Este Label vacío ayuda a alinear
+        contenedor.add_widget(Label())  # Espacio vacío
 
         return contenedor
 
     def calcular_pension_esperada(self, sender):
-        try:
             edad = int(self.edad.text)
             sexo = self.sexo.text.upper()
             salario_actual = float(self.salario_actual.text)
@@ -62,40 +66,24 @@ class CalculatorApp(App):
             rentabilidad_promedio = float(self.rentabilidad_promedio.text)
             tasa_administracion = float(self.tasa_administracion.text)
 
-            # Crear los parámetros para el cálculo
-            params = Parameters(
-                age=edad,
-                gender=sexo,
-                current_salary=salario_actual,
-                weeks_worked=semanas_laboradas,
-                current_pension_savings=ahorro_pensional_a_hoy,
-                average_return=rentabilidad_promedio,
-                management_rate=tasa_administracion
-            )
+            # Se crea la instancia de ParametrosPension
+            parameters = ParametrosPension()
+            parameters.age = edad
+            parameters.gender = sexo
+            parameters.current_salary = salario_actual
+            parameters.weeks_worked = semanas_laboradas
+            parameters.current_pension_savings = ahorro_pensional_a_hoy
+            parameters.average_return = rentabilidad_promedio
+            parameters.management_rate = tasa_administracion
 
             # Calcular el ahorro pensional esperado
-            expected_savings = CalculatorLogic.calculate_expected_pension_savings(params)
+            expected_savings = CalculatorLogic.calculate_expected_pension_savings(parameters)
 
-            # Mostrar el resultado en una ventana emergente
-            self.mostrar_popup(f"Ahorro pensional esperado: {expected_savings}")
-
-        except ValueError:
-            self.mostrar_popup("Error: Por favor ingresa valores numéricos válidos.")
-        except Exceptions.EdadError as e:
-            self.mostrar_popup(str(e))
-        except Exceptions.SalarioActualNegativoError as e:
-            self.mostrar_popup(str(e))
-        except Exceptions.SemanasLaboradasNegativasError as e:
-            self.mostrar_popup(str(e))
-        except Exceptions.AhorroPensionalNegativoError as e:
-            self.mostrar_popup(str(e))
-        except Exceptions.TasaAdministracionError as e:
-            self.mostrar_popup(str(e))
-        except Exceptions.RentabilidadPromedioNegativaError as e:
-            self.mostrar_popup(str(e))
+            # Mostrar el resultado en la interfaz
+            self.resultado_label.text = f"Pensión esperada: {expected_savings:.2f} "
 
     def mostrar_popup(self, mensaje):
-        popup = Popup(title='Resultado',
+        popup = Popup(title='Error',
                       content=Label(text=mensaje),
                       size_hint=(None, None), size=(400, 400))
         popup.open()
