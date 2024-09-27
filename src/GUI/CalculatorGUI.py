@@ -1,6 +1,5 @@
 import sys
-sys.path.append(r"C:\Users\USER\PycharmProjects\CalculadoraPensional\src")
-#sys.path.append("src")
+sys.path.append("src")
 
 from Logic import CalculatorLogic
 from Logic.Parameters import ParametrosPension
@@ -38,11 +37,11 @@ class CalculatorApp(App):
         self.ahorro_pensional_a_hoy = TextInput(font_size=30)
         contenedor.add_widget(self.ahorro_pensional_a_hoy)
 
-        contenedor.add_widget(Label(text="Ingresa tu rentabilidad promedio"))
+        contenedor.add_widget(Label(text="Ingresa tu rentabilidad promedio entre (0 y 3)"))
         self.rentabilidad_promedio = TextInput(font_size=30)
         contenedor.add_widget(self.rentabilidad_promedio)
 
-        contenedor.add_widget(Label(text="Ingresa tu tasa de administración"))
+        contenedor.add_widget(Label(text="Ingresa tu tasa de administración entre (0 y 3)"))
         self.tasa_administracion = TextInput(font_size=30)
         contenedor.add_widget(self.tasa_administracion)
 
