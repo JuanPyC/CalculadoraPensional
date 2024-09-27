@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="todo en orden">
+    <list default="true" id="658fe8b8-a6a6-4b61-ae59-51d03f754d86" name="Changes" comment="Gui">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.MD" beforeDir="false" afterPath="$PROJECT_DIR$/README.MD" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Console/CalculatorConsole.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/CalculatorGUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CalculatorGUI.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Esteban1903"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/EdisonOspina16/CalculadoraPensional.git",
+    "accountId": "92c5e9e2-db88-46f3-a873-930d135da1af"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -59,7 +74,7 @@
       <recent name="C:\Users\USER\PycharmProjects\CalculadoraPensional\Logic" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CalculatorGUI">
+  <component name="RunManager" selected="Python.CalculatorTest">
     <configuration name="CalculatorConsole" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Calculadora Pencional" />
       <option name="ENV_FILES" value="" />
@@ -172,9 +187,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.CalculatorGUI" />
         <item itemvalue="Python.CalculatorTest" />
         <item itemvalue="Python.Exceptions" />
+        <item itemvalue="Python.CalculatorGUI" />
         <item itemvalue="Python.CalculatorConsole" />
         <item itemvalue="Python.CalculatorLogic" />
       </list>
@@ -183,7 +198,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+        <option value="bundled-python-sdk-ce3d9afa04ac-ba05f1cad1b1-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.20224.347" />
       </set>
     </attachedChunks>
   </component>
@@ -404,23 +419,7 @@
       <option name="project" value="LOCAL" />
       <updated>1727231840245</updated>
     </task>
-    <task id="LOCAL-00027" summary="ahora todo funciona correctamente">
-      <option name="closed" value="true" />
-      <created>1727232717702</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1727232717702</updated>
-    </task>
-    <task id="LOCAL-00028" summary="todo en orden">
-      <option name="closed" value="true" />
-      <created>1727269431523</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1727269431523</updated>
-    </task>
-    <option name="localTasksCounter" value="29" />
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -453,8 +452,6 @@
     <MESSAGE value="Arreglado los wtf" />
     <MESSAGE value="INGLES" />
     <MESSAGE value="INGLES TEST" />
-    <MESSAGE value="ahora todo funciona correctamente" />
-    <MESSAGE value="todo en orden" />
-    <option name="LAST_COMMIT_MESSAGE" value="todo en orden" />
+    <option name="LAST_COMMIT_MESSAGE" value="INGLES TEST" />
   </component>
 </project>
