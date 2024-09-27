@@ -77,8 +77,8 @@ def verify_average_profitability(average_return):
     """
 
     RENTABILIDAD_PROMEDIO_MINIMO = 0
-
-    if average_return < RENTABILIDAD_PROMEDIO_MINIMO:
+    RENTABILIDAD_PROMEDIO_MAXIMA = 3
+    if average_return < RENTABILIDAD_PROMEDIO_MINIMO or average_return > RENTABILIDAD_PROMEDIO_MAXIMA:
         raise Exceptions.RentabilidadPromedioNegativaError(
             f"La rentabilidad promedio, la cual es: {average_return}, debe ser mayor que 0")
 
