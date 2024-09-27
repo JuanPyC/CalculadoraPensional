@@ -58,6 +58,8 @@ class CalculatorApp(App):
         return contenedor
 
     def calcular_pension_esperada(self, sender):
+        try:
+            # Capturar los valores de los inputs
             edad = int(self.edad.text)
             sexo = self.sexo.text.upper()
             salario_actual = float(self.salario_actual.text)
@@ -82,7 +84,26 @@ class CalculatorApp(App):
             # Mostrar el resultado en la interfaz
             self.resultado_label.text = f"Pensión esperada: {expected_savings:.2f} "
 
+        except ValueError:
+            # Si hay un error en la conversión de algún campo, mostrar un popup de error
+            self.mostrar_popup("Error: Asegúrate de ingresar números válidos en los campos.")
+        except Exceptions.EdadError:
+            self.mostrar_popup("Error: La edad ingresada no es válida.")
+        except Exceptions.SalarioActualNegativoError:
+            self.mostrar_popup("Error: El salario actual no puede ser negativo.")
+        except Exceptions.SemanasLaboradasNegativasError:
+            self.mostrar_popup("Error: Las semanas laboradas no pueden ser negativas.")
+        except Exceptions.AhorroPensionalNegativoError:
+            self.mostrar_popup("Error: El ahorro pensional no puede ser negativo.")
+        except Exceptions.TasaAdministracionError:
+            self.mostrar_popup("Error: La tasa de administración ingresada no es válida.")
+        except Exceptions.RentabilidadPromedioNegativaError:
+            self.mostrar_popup("Error: La rentabilidad promedio no puede ser negativa.")
+        except Exception as e:
+            self.mostrar_popup(f"Error inesperado: {str(e)}")
+
     def mostrar_popup(self, mensaje):
+        # Mostrar un popup con un mensaje
         popup = Popup(title='Error',
                       content=Label(text=mensaje),
                       size_hint=(None, None), size=(400, 400))
