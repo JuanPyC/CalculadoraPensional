@@ -97,7 +97,7 @@ class CalculatorApp(App):
         except Exceptions.TasaAdministracionError:
             self.mostrar_popup("Error: La tasa de administración ingresada no es válida.")
         except Exceptions.RentabilidadPromedioNegativaError:
-            self.mostrar_popup("Error: La rentabilidad promedio no puede ser negativa.")
+            self.mostrar_popup("Error: La rentabilidad promedio ingresada no es válida.")
         except Exception as e:
             self.mostrar_popup(f"Error inesperado: {str(e)}")
 
