@@ -39,9 +39,31 @@ pip install -r requirements.txt
     ```bash
     python Test/CalculatorTest.py
     ```
+# CalculatorGUI
+# Requisitos
+- Python 3.x
+ - Kivy
 
+ ```
+ pip install kivy
 
+ ```
+# Uso
+Para ejecutar la aplicación de la calculadora pensional desde la consola, sigue estos pasos:
 
+1 -  Asegúrate de estar en el directorio del proyecto.
+
+2 - Navega al directorio del proyecto
+
+ ```
+ cd calculadora-pensional
+
+  ```
+3 - Ejecuta el siguiente comando:
+ ```
+ python CalculatorGUI.py
+
+  ```
 ## ¿Cómo está hecho?
 - ## Arquitectura del proyecto
 El proyecto sigue una arquitectura modular, con la lógica de negocio separada de la interfaz de usuario de consola. Se utiliza Python como lenguaje de programación y se organizan las diferentes capas de la aplicación en subcarpetas dentro de src.

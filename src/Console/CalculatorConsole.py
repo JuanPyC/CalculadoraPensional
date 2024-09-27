@@ -1,6 +1,13 @@
 import sys
 import os
+
 sys.path.append("src")
+
+
+"""
+Imports the necessary modules: pension calculator logic,
+parameters, and custom exceptions.
+"""
 
 from Logic import CalculatorLogic
 from Logic import Parameters
