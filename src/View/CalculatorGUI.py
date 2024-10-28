@@ -1,9 +1,9 @@
 import sys
 sys.path.append("src")
 
-from Logic import CalculatorLogic
-from Logic.Parameters import ParametrosPension
-from Logic import Exceptions
+from src.Model import calculadora_model
+from Model.Parameters import ParametrosPension
+from Model import Exceptions
 
 from kivy.app import App
 from kivy.uix.label import Label
@@ -77,7 +77,7 @@ class CalculatorApp(App):
             parameters.management_rate = tasa_administracion
 
             # Calcular el ahorro pensional esperado
-            expected_savings = CalculatorLogic.calculate_expected_pension_savings(parameters)
+            expected_savings = calculadora_model.calculate_expected_pension_savings(parameters)
 
             # Mostrar el resultado en la interfaz
             self.resultado_label.text = f"Pensión esperada: {expected_savings:.2f} "

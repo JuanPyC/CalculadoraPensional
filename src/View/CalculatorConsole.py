@@ -9,9 +9,9 @@ Imports the necessary modules: pension calculator logic,
 parameters, and custom exceptions.
 """
 
-from Logic import CalculatorLogic
-from Logic import Parameters
-from Logic import Exceptions
+from src.Model import calculadora_model
+from Model import Parameters
+from Model import Exceptions
 
 def obtener_datos():
     """
@@ -104,13 +104,13 @@ def obtener_datos():
     parameters.management_rate = management_rate
 
     try:
-        CalculatorLogic.verify_age(parameters.age)
+        calculadora_model.verify_age(parameters.age)
 
-        expected_pension_savings = CalculatorLogic.calculate_expected_pension_savings(parameters)
+        expected_pension_savings = calculadora_model.calculate_expected_pension_savings(parameters)
         print(f"El ahorro pensional esperado es: {expected_pension_savings}")
 
         print(
-            f"La pensión esperada mensual es: {CalculatorLogic.calculate_expected_pension(expected_pension_savings, gender)}")
+            f"La pensión esperada mensual es: {calculadora_model.calculate_expected_pension(expected_pension_savings, gender)}")
 
     # Maneja cualquier error de valor incorrecto ingresado por el usuario
 

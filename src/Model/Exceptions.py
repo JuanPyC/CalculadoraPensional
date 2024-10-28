@@ -20,3 +20,6 @@ class TasaAdministracionError(Exception):
 
 class RentabilidadPromedioNegativaError(Exception):
     pass
+
+class DatabaseError(Exception):
+    pass 
