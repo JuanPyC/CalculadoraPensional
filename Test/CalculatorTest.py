@@ -15,18 +15,20 @@ class PensionTest(unittest.TestCase):
     def test_Normal_Case1(self):
         parameters = ParametrosPension()
         # Entradas
-        parameters.age = 65
+        parameters.age = 65 
         parameters.gender = "m"
         parameters.current_salary = 2300000
         parameters.weeks_worked = 1200
         parameters.current_pension_savings = 30000000
         parameters.average_return = 2
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
+
 
         total_savings = 3637.656861250826
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Normal_Case2(self):
         parameters = ParametrosPension()
@@ -38,11 +40,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 25000000
         parameters.average_return = 2
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 3.141746163814644e+20
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Normal_Case3(self):
         parameters = ParametrosPension()
@@ -54,11 +57,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 85000000
         parameters.average_return = 2
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 1.35381937545e+16
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Normal_Case4(self):
         parameters = ParametrosPension()
@@ -70,11 +74,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 120000000
         parameters.average_return = 1
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 552960000000.0
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Normal_Case5(self):
         parameters = ParametrosPension()
@@ -86,11 +91,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 200000000
         parameters.average_return = 1
         parameters.management_rate = 2
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 27481600000.0
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Normal_Case6(self):
         parameters = ParametrosPension()
@@ -102,11 +108,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 10000000
         parameters.average_return = 2
         parameters.management_rate = 2
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 4.224886030582197e+22
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     """ Casos extraordinarios: Evaluamos casos fuera de los escenarios comunes
     pero todavía posibles.    """
@@ -121,10 +128,11 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 25000000
         parameters.average_return = 1
         parameters.management_rate = 2
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         ahorro_total = 197132288000000.0
-        resultado = calculadora.calculate_expected_pension_savings(parameters)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
         self.assertEqual(resultado, ahorro_total)
 
     def test_Extraordinary2(self):
@@ -137,11 +145,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 15000000
         parameters.average_return = 2
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 1.935165342555e+17
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Extraordinary3(self):
         parameters = ParametrosPension()
@@ -153,11 +162,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 30000000
         parameters.average_return = 2
         parameters.management_rate = 2
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 0.008221519706938333
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Extraordinary4(self):
         parameters = ParametrosPension()
@@ -169,11 +179,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 15600000
         parameters.average_return = 3
         parameters.management_rate = 2
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 3.62924736512e+17
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Extraordinary5(self):
         parameters = ParametrosPension()
@@ -185,11 +196,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 12078720000
         parameters.average_return = 3
         parameters.management_rate = 2
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 0.042559695430099964
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     def test_Extraordinary6(self):
         parameters = ParametrosPension()
@@ -201,11 +213,12 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 117843200
         parameters.average_return = 2
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         total_savings = 476035.1165980796
-        result = calculadora.calculate_expected_pension_savings(parameters)
-        self.assertEqual(result, total_savings)
+        calculadora.calculate_expected_pension_savings()
+        resultado = calculadora.expected_pension_savings
+        self.assertEqual(resultado, total_savings)
 
     """ Casos de error: Validamos que el sistema arroje las excepciones
     correctas cuando se ingresan valores inválidos.   """
@@ -220,10 +233,10 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 50000000
         parameters.average_return = 3
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.EdadError):
-            calculadora.calculate_expected_pension_savings(parameters)
+            calculadora.calculate_expected_pension_savings()
 
     def test_very_low_age_error(self):
         parameters = ParametrosPension()
@@ -235,10 +248,10 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 2000000
         parameters.average_return = 3
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.EdadError):
-            calculadora.calculate_expected_pension_savings(parameters)
+            calculadora.calculate_expected_pension_savings()
 
     def test_negative_salary_error(self):
         parameters = ParametrosPension()
@@ -250,10 +263,10 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 40000000
         parameters.average_return = 3
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.SalarioActualNegativoError):
-            calculadora.calculate_expected_pension_savings(parameters)
+            calculadora.calculate_expected_pension_savings()
 
     def test_negative_weeks_worked_error(self):
         parameters = ParametrosPension()
@@ -265,10 +278,10 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 60000000
         parameters.average_return = 4
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.SemanasLaboradasNegativasError):
-            calculadora.calculate_expected_pension_savings(parameters)
+            calculadora.calculate_expected_pension_savings()
 
     def test_negative_pension_savings_error(self):
         parameters = ParametrosPension()
@@ -280,10 +293,10 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = -10000000  # Error
         parameters.average_return = 3
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.AhorroPensionalNegativoError):
-            calculadora.calculate_expected_pension_savings(parameters)
+            calculadora.calculate_expected_pension_savings()
 
     def test_excessive_administration_rate_error(self):
         parameters = ParametrosPension()
@@ -295,10 +308,10 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 70000000
         parameters.average_return = 3
         parameters.management_rate = 4  # Error (excede el 3%)
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.TasaAdministracionError):
-            calculadora.calculate_expected_pension_savings(parameters)
+            calculadora.calculate_expected_pension_savings()
 
     def test_negative_average_profitability_error(self):
         parameters = ParametrosPension()
@@ -310,10 +323,10 @@ class PensionTest(unittest.TestCase):
         parameters.current_pension_savings = 100000000
         parameters.average_return = -2  # Error
         parameters.management_rate = 1
-        calculadora = CalculadoraPensionalModel()
+        calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.RentabilidadPromedioNegativaError):
-            calculadora.calculate_expected_pension_savings(parameters)
+            calculadora.calculate_expected_pension_savings()
 
 
 # Este fragmento de codigo permite ejecutar la prueba individualmente
