@@ -1,7 +1,7 @@
   # CalculadoraPensional
 
-## Quién hizo esto
-Este proyecto fue desarrollado y modificado por los estudiantes de Código Limpio: Alejandro Bustamante y Dubín Soto. 
+## ¿Quién hizo esto?
+Este proyecto fue desarrollado y modificado por los estudiantes de Código Limpio: Juan Diego Gomez y Santiago Cano
 
 ## ¿Qué es y para qué es?
 'CalculadoraPensional' es una herramienta diseñada para calcular pensiones con base en diferentes criterios definidos en su lógica interna. El propósito de este proyecto es facilitar el cálculo de pensiones de acuerdo con las normativas y reglas especificadas, permitiendo realizar simulaciones y proyecciones para los usuarios finales.
@@ -59,3 +59,36 @@ Actualmente, el proyecto no especifica ninguna dependencia externa, por lo que s
 - Model: Contiene las clases y funciones que implementan la lógica de los cálculos de pensión.
 - Test: Contiene las pruebas unitarias para validar el comportamiento del sistema.
 - Controller: Se encarga de conectarse a la base de datos y realizar 4 funcionalidad conocidas como CRUD 
+
+## Como configurar el SecretConfig.py
+
+
+Datos secretos que no deben publicarse en el repositorio
+
+Diligencie estos datos y guarde este archivo como SecretConfig.py en el modulo src
+para poder ejecutar la aplicación
+
+
+
+PGDATABASE = "ESCRIBA EL NOMBRE DE LA BASE DE DATOS"
+PGUSER = "ESCRIBA EL USUARIO DE LA DB"
+PGPASSWORD = "ESCRIBA LA CONSTRASEÑA"
+PGHOST = "ESCRIBA LA DIRECCION DNS O DIRECCION IP DEL SERVIDOR"
+PGPORT = 5432 # POR DEFECTO ES 5432, PERO PUEDE CAMBIAR EN SU DB
+
+## Como ejecutar
+1. Clonar el repositorio de la ultima practica de codigo limpio:
+```mardown
+git clone https://github.com/JuanPyC/CalculadoraPensional CalculadoraPensional
+```
+
+2. Ejecutar el comando para instalar la libreria flask
+  ```markdown
+  pip install flask
+  ``` 
+3. Ejecutar el modulo app.py
+```mardown 
+py app.py
+```
+## ¿Quién hizo esto?
+Este proyecto fue desarrollado y modificado por los estudiantes de Código Limpio: Juan Diego Gomez y Santiago Cano

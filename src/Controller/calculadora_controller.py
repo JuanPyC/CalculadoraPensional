@@ -27,7 +27,7 @@ class CalculadoraPensionalController:
             "gender": genero
         }
         try:
-            expected_savings = calculate_expected_pension_savings(parameters)
+            expected_savings = calculate_expected_pension_saving(parameters)
             print("Ahorro pensional esperado:", expected_savings)  # O bien, guardar este valor en la base de datos
             self.model.cursor.execute(query, values)
             self.model.connection.commit()
