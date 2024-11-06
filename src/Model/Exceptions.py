@@ -23,3 +23,12 @@ class RentabilidadPromedioNegativaError(Exception):
 
 class DatabaseError(Exception):
     pass 
+
+class GenderError(Exception):
+    pass
+
+class ExpectedYearsOfLifeError(Exception):
+    pass
+
+class ExpectedPensionSavingsError(Exception):
+    pass
