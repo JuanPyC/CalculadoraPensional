@@ -35,11 +35,19 @@ class TestCalculadoraPensionalController(unittest.TestCase):
         Usuario.current_pension_savings = 30000000
         Usuario.average_return = 2
         Usuario.management_rate = 1
-        id = 100000
+        id = 1
         create_user(Usuario)
+        usuario_buscado = brows_user(1)
 
-        with self.assertRaises(UsuarioActualizadoError):
-            brows_user(id)
+        self.assertEqual(str(Usuario.name), usuario_buscado.name)
+        self.assertEqual(str(Usuario.age), usuario_buscado.age)
+        self.assertEqual(str(Usuario.gender), usuario_buscado.gender)
+        self.assertEqual(str(Usuario.current_salary), usuario_buscado.current_salary)
+        self.assertEqual(str(Usuario.weeks_worked), usuario_buscado.weeks_worked)
+        self.assertEqual(str(Usuario.current_pension_sabings), usuario_buscado.current_pension_sabings)
+        self.assertEqual(str(Usuario.average_return), usuario_buscado.average_return)
+        self.assertEqual(str(Usuario.management_rate), usuario_buscado.management)
+
 
     def test_insertError(self):
 
@@ -77,11 +85,18 @@ class TestCalculadoraPensionalController(unittest.TestCase):
         Usuario.current_pension_savings = 30000000
         Usuario.average_return = 2
         Usuario.management_rate = 1
-        id = 70
+        id = 1
         create_user(Usuario)
+        usuario_buscado = brows_user(1)
 
-        with self.assertRaises(UsuarioBuscadoError):
-            brows_user(id)
+        self.assertEqual(str(Usuario.name), usuario_buscado.name)
+        self.assertEqual(str(Usuario.age), usuario_buscado.age)
+        self.assertEqual(str(Usuario.gender), usuario_buscado.gender)
+        self.assertEqual(str(Usuario.current_salary), usuario_buscado.current_salary)
+        self.assertEqual(str(Usuario.weeks_worked), usuario_buscado.weeks_worked)
+        self.assertEqual(str(Usuario.current_pension_sabings), usuario_buscado.current_pension_sabings)
+        self.assertEqual(str(Usuario.average_return), usuario_buscado.average_return)
+        self.assertEqual(str(Usuario.management_rate), usuario_buscado.management)
 
     def test_buscarError(self):
 
@@ -100,21 +115,6 @@ class TestCalculadoraPensionalController(unittest.TestCase):
         with self.assertRaises(UsuarioBuscadoError):
             brows_user(id)
 
-    def actualizar(self):
-        Usuario = ParametrosPension()
-        Usuario.name = "Juan"
-        Usuario.age = 65 
-        Usuario.gender = "m"
-        Usuario.current_salary = 2300000
-        Usuario.weeks_worked = 1200
-        Usuario.current_pension_savings = 30000000
-        Usuario.average_return = 2
-        Usuario.management_rate = 1
-        id = 160
-        create_user(Usuario)
-
-        with self.assertRaises(UsuarioActualizadoError):
-            update_user(Usuario, id)
 
     def actualizarError(self):
         Usuario = ParametrosPension()
