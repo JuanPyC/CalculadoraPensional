@@ -1,5 +1,6 @@
 class ParametrosPension:
     def __init__(self):
+        self.name = None # Nombre
         self.age = None  # Edad
         self.gender = None  # Genero
         self.current_salary = None  # Salario Actual

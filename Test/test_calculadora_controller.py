@@ -1,54 +1,139 @@
 import sys 
 sys.path.append("src")
-
 import unittest
-from CalculadoraPensional.src.Controller.calculadora_controller import CalculadoraPensionalController
-from CalculadoraPensional.src.Model.Exceptions import DatabaseError
+from Controller.calculadora_controller import CrearTabla, ObtenerCursor, BorrarFilas,create_user,brows_user, UsuarioCreadoError,UsuarioBuscadoError, UsuarioActualizadoError, update_user
+from Model.Exceptions import DatabaseError
+from Model.Parameters import ParametrosPension
+
 
 class TestCalculadoraPensionalController(unittest.TestCase):
     def setUp(self):
-        self.controller = CalculadoraPensionalController()
-        
+        """ Se ejecuta siempre antes de cada metodo de prueba """
+        print("Invocando setUp")
+        BorrarFilas() # Asegura que antes de cada metodo de prueba, se borren todos los datos de la tabla
+
+    def setUpClass():
+        """ Se ejecuta al inicio de todas las pruebas """
+        print("Invocando setUpClass")
+        CrearTabla()  # Asegura que al inicio de las pruebas, la tabla este creada
+
     def tearDown(self):
-        self.controller.close_connection()
+        """ Se ejecuta al final de cada test """
+        print("Invocnado tearDown")
 
-    def test_create_user_success(self):
-        try:
-            self.controller.create_user("Alejandro", 25, 3000.00, 100, 15000.00, 1.5, 2.0, "M")
-        except Exception as e:
-            self.fail(f"Fallo al crear usuario: {str(e)}")
+    def tearDownClass():
+        """ Se ejecuta al final de todos los tests """
+        print("Invocando tearDownClass")
+    
+    def test_insert1(self):
+        Usuario = ParametrosPension()
+        Usuario.name = "Juan"
+        Usuario.age = 65 
+        Usuario.gender = "m"
+        Usuario.current_salary = 2300000
+        Usuario.weeks_worked = 1200
+        Usuario.current_pension_savings = 30000000
+        Usuario.average_return = 2
+        Usuario.management_rate = 1
+        id = 100000
+        create_user(Usuario)
 
-    def test_create_user_error(self):
-        with self.assertRaises(DatabaseError):
-            self.controller.create_user("Alejandro", 17, 3000.00, 100, 15000.00, 1.5, 2.0, "M")
+        with self.assertRaises(UsuarioActualizadoError):
+            brows_user(id)
 
-    def test_read_user_success(self):
-        result = self.controller.read_user(1)
-        self.assertIsNotNone(result)
+    def test_insertError(self):
 
-    def test_read_user_error(self):
-        result = self.controller.read_user(9999)  # ID inexistente
-        self.assertIsNone(result)
+        Usuario = ParametrosPension()
+        Usuario.name = "Juan"
+        Usuario.age = 65 
+        Usuario.gender = "m"
+        Usuario.current_salary = 2300000
+        Usuario.weeks_worked = 1200
+        Usuario.current_pension_savings = 30000000
+        Usuario.average_return = 2
+        Usuario.management_rate = 1
+        create_user(Usuario)
 
-    def test_update_user_success(self):
-        try:
-            self.controller.update_user(1, nombre="Carlos", salario_actual=4000.00)
-        except Exception as e:
-            self.fail(f"Fallo al actualizar usuario: {str(e)}")
+        Usuario_error = ParametrosPension()
+        Usuario_error.name = "Juan"
+        Usuario_error.age = 65 
+        Usuario_error.gender = "m"
+        Usuario_error.current_salary = 2300000
+        Usuario_error.weeks_worked = 1200
+        Usuario_error.current_pension_savings = 30000000
+        Usuario_error.average_return = 15
+        Usuario_error.management_rate = 1
+        with self.assertRaises(UsuarioCreadoError):
+            create_user(Usuario_error)
 
-    def test_update_user_error(self):
-        with self.assertRaises(DatabaseError):
-            self.controller.update_user(9999, nombre="Carlos", salario_actual=4000.00)
+    def test_buscar(self):
 
-    def test_delete_user_success(self):
-        try:
-            self.controller.delete_user(1)
-        except Exception as e:
-            self.fail(f"Fallo al eliminar usuario: {str(e)}")
+        Usuario = ParametrosPension()
+        Usuario.name = "Juan"
+        Usuario.age = 65 
+        Usuario.gender = "m"
+        Usuario.current_salary = 2300000
+        Usuario.weeks_worked = 1200
+        Usuario.current_pension_savings = 30000000
+        Usuario.average_return = 2
+        Usuario.management_rate = 1
+        id = 70
+        create_user(Usuario)
 
-    def test_delete_user_error(self):
-        with self.assertRaises(DatabaseError):
-            self.controller.delete_user(9999)  # ID inexistente
+        with self.assertRaises(UsuarioBuscadoError):
+            brows_user(id)
+
+    def test_buscarError(self):
+
+        Usuario = ParametrosPension()
+        Usuario.name = "Juan"
+        Usuario.age = 65 
+        Usuario.gender = "m"
+        Usuario.current_salary = 2300000
+        Usuario.weeks_worked = 1200
+        Usuario.current_pension_savings = 30000000
+        Usuario.average_return = 2
+        Usuario.management_rate = 1
+        id = 60
+        create_user(Usuario)
+
+        with self.assertRaises(UsuarioBuscadoError):
+            brows_user(id)
+
+    def actualizar(self):
+        Usuario = ParametrosPension()
+        Usuario.name = "Juan"
+        Usuario.age = 65 
+        Usuario.gender = "m"
+        Usuario.current_salary = 2300000
+        Usuario.weeks_worked = 1200
+        Usuario.current_pension_savings = 30000000
+        Usuario.average_return = 2
+        Usuario.management_rate = 1
+        id = 160
+        create_user(Usuario)
+
+        with self.assertRaises(UsuarioActualizadoError):
+            update_user(Usuario, id)
+
+    def actualizarError(self):
+        Usuario = ParametrosPension()
+        Usuario.name = "Juan"
+        Usuario.age = 65 
+        Usuario.gender = "m"
+        Usuario.current_salary = 2300000
+        Usuario.weeks_worked = 1200
+        Usuario.current_pension_savings = 30000000
+        Usuario.average_return = 2
+        Usuario.management_rate = 1
+        id = 125
+        create_user(Usuario)
+
+        with self.assertRaises(UsuarioActualizadoError):
+            update_user(Usuario, id)
+            
+
+
 
 if __name__ == "__main__":
     unittest.main()

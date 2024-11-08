@@ -42,7 +42,6 @@ pip install -r requirements.txt
 ## ¿Cómo ejecutar las bases de datos?
 1. Para ejecutar las bases de datos, navega a la carpeta raíz del proyecto 
 2. Escribe el siguiente comando y presiona `Enter`
-3. 
 
 
 ## ¿Cómo está hecho?
@@ -86,9 +85,21 @@ git clone https://github.com/JuanPyC/CalculadoraPensional CalculadoraPensional
   ```markdown
   pip install flask
   ``` 
-3. Ejecutar el modulo app.py
+
+3. Ejecutar pruebas unitarias
+```mardown
+py Test/CalculatorTest.py
+```
+
+
+4. Ejecutar el modulo app.py
 ```mardown 
 py app.py
 ```
 ## ¿Quién hizo esto?
-Este proyecto fue desarrollado y modificado por los estudiantes de Código Limpio: Juan Diego Gomez y Santiago Cano
+Este proyecto fue desarrollado y modificado por los estudiantes de Código Limpio: 
+
+Alejandro bustamante
+
+## Editado por:
+Juan Diego Gomez y Santiago Cano

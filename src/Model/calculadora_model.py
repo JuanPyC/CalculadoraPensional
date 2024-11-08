@@ -56,6 +56,8 @@ class CalculadoraPensionalModel:
         """
         if self.parameters.age < CalculadoraPensionalModel.EDAD_MINIMA or self.parameters.age > CalculadoraPensionalModel.EDAD_MAXIMA:
             raise EdadError(f"Su edad, la cual es: {self.parameters.age}, debe ser mayor a 18 y menor a 115")
+        
+        return self.parameters.age
 
     def verify_current_salary(self):
         """Verifica que el salario actual sea positivo.
@@ -65,6 +67,7 @@ class CalculadoraPensionalModel:
         """
         if self.parameters.current_salary < CalculadoraPensionalModel.SALARIO_MINIMO:
             raise SalarioActualNegativoError(f"Su salario, el cual es: {self.parameters.current_salary}, debe ser mayor a 0")
+        return self.parameters.current_salary
 
     def verify_weeks_worked(self):
         """Verifica que las semanas trabajadas sean mayores que cero.

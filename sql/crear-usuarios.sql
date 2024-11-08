@@ -1,5 +1,5 @@
 CREATE TABLE usuarios (
-    id SERIAL PRIMARY KEY,
+    id Serial PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     edad INT CHECK (edad >= 18 AND edad <= 115),
     salario_actual DECIMAL(10, 2) CHECK (salario_actual >= 0),

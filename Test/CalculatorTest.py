@@ -15,6 +15,7 @@ class PensionTest(unittest.TestCase):
     def test_Normal_Case1(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 65 
         parameters.gender = "m"
         parameters.current_salary = 2300000
@@ -33,6 +34,7 @@ class PensionTest(unittest.TestCase):
     def test_Normal_Case2(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 30
         parameters.gender = "F"
         parameters.current_salary = 1800000
@@ -50,6 +52,7 @@ class PensionTest(unittest.TestCase):
     def test_Normal_Case3(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 40
         parameters.gender = "m"
         parameters.current_salary = 3500000
@@ -67,6 +70,7 @@ class PensionTest(unittest.TestCase):
     def test_Normal_Case4(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 45
         parameters.gender = "m"
         parameters.current_salary = 2500000
@@ -84,6 +88,7 @@ class PensionTest(unittest.TestCase):
     def test_Normal_Case5(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 50
         parameters.gender = "m"
         parameters.current_salary = 4200000
@@ -101,6 +106,7 @@ class PensionTest(unittest.TestCase):
     def test_Normal_Case6(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 25
         parameters.gender = "m"
         parameters.current_salary = 1200000
@@ -121,6 +127,7 @@ class PensionTest(unittest.TestCase):
     def test_Extraordinary1(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 35
         parameters.gender = "m"
         parameters.current_salary = 2000000
@@ -138,6 +145,7 @@ class PensionTest(unittest.TestCase):
     def test_Extraordinary2(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 36
         parameters.gender = "f"
         parameters.current_salary = 500000
@@ -155,6 +163,7 @@ class PensionTest(unittest.TestCase):
     def test_Extraordinary3(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 77
         parameters.gender = "m"
         parameters.current_salary = 200000
@@ -172,6 +181,7 @@ class PensionTest(unittest.TestCase):
     def test_Extraordinary4(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 40
         parameters.gender = "f"
         parameters.current_salary = 1300000
@@ -189,6 +199,7 @@ class PensionTest(unittest.TestCase):
     def test_Extraordinary5(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 76
         parameters.gender = "m"
         parameters.current_salary = 80000000
@@ -206,6 +217,7 @@ class PensionTest(unittest.TestCase):
     def test_Extraordinary6(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 62
         parameters.gender = "f"
         parameters.current_salary = 1300000
@@ -226,6 +238,7 @@ class PensionTest(unittest.TestCase):
     def test_very_high_age_error(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 130  # Error
         parameters.gender = "m"
         parameters.current_salary = 2500000
@@ -241,6 +254,7 @@ class PensionTest(unittest.TestCase):
     def test_very_low_age_error(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 12  # Error
         parameters.gender = "M"
         parameters.current_salary = 1200000
@@ -256,6 +270,7 @@ class PensionTest(unittest.TestCase):
     def test_negative_salary_error(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 35
         parameters.gender = "F"
         parameters.current_salary = -3000000  # Error
@@ -271,6 +286,7 @@ class PensionTest(unittest.TestCase):
     def test_negative_weeks_worked_error(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 40
         parameters.gender = "m"
         parameters.current_salary = 3500000
@@ -286,6 +302,7 @@ class PensionTest(unittest.TestCase):
     def test_negative_pension_savings_error(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 50
         parameters.gender = "f"
         parameters.current_salary = 4000000
@@ -301,6 +318,7 @@ class PensionTest(unittest.TestCase):
     def test_excessive_administration_rate_error(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 45
         parameters.gender = "f"
         parameters.current_salary = 3800000
@@ -316,6 +334,7 @@ class PensionTest(unittest.TestCase):
     def test_negative_average_profitability_error(self):
         parameters = ParametrosPension()
         # Entradas
+        parameters.name = "Juan"
         parameters.age = 55
         parameters.gender = "m"
         parameters.current_salary = 5000000
@@ -326,6 +345,22 @@ class PensionTest(unittest.TestCase):
         calculadora = CalculadoraPensionalModel(parameters)
 
         with self.assertRaises(Exceptions.RentabilidadPromedioNegativaError):
+            calculadora.calculate_expected_pension_savings()
+
+    def test_negative_pension_savings_error2(self):
+        parameters = ParametrosPension()
+        # Entradas
+        parameters.name = "Juan"
+        parameters.age = 50
+        parameters.gender = "f"
+        parameters.current_salary = 4000000
+        parameters.weeks_worked = 1200
+        parameters.current_pension_savings = -10000000  # Error
+        parameters.average_return = 3
+        parameters.management_rate = 1
+        calculadora = CalculadoraPensionalModel(parameters)
+
+        with self.assertRaises(Exceptions.AhorroPensionalNegativoError):
             calculadora.calculate_expected_pension_savings()
 
 
